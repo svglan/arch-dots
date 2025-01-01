@@ -2,6 +2,15 @@
 <img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
 </h3>
 
+<h3 align="center">
+
+## 💌 KooL's Debian and Ubuntu Hyprland Dotfiles 💌
+### This repo is for Debian and Ubuntu Hyprland Dots
+####  NOTE: Excluding Ubuntu 24.04 LTS since its a very old dots
+
+</h3>
+
+
 <div align="center">
 <br>
   <a href="#installation"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
@@ -32,10 +41,6 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 
 </div>
 
-
-## 💌 KooL's Debian and Ubuntu Hyprland Hyprland 💌
-### This repo is for Debian and Ubuntu Hyprland Dots
-####  NOTE: Excluding Ubuntu 24.04 LTS since its a very old dots
 
 #### 📹 A video walkthroughs
 <details>
