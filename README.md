@@ -32,6 +32,11 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 
 </div>
 
+
+## 💌 KooL's Debian and Ubuntu Hyprland Hyprland 💌
+### This repo is for Debian and Ubuntu Hyprland Dots
+####  NOTE: Excluding Ubuntu 24.04 LTS since its a very old dots
+
 #### 📹 A video walkthroughs
 <details>
   <summary>YT Videos</summary>
@@ -48,27 +53,17 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 </details>
 
 ## Installation 
-### 👁️‍🗨️ My Hyprland install Scripts 👁️‍🗨️
-- Automated Hyprland Scripts for Distro of choice which will pull this dotfiles if opted to install these configurations
-
-- [Arch-Linux](https://github.com/JaKooLit/Arch-Hyprland)
-
-- [OpenSUSE(Tumbleweed)](https://github.com/JaKooLit/OpenSuse-Hyprland)
-
-- [Fedora-Linux](https://github.com/JaKooLit/Fedora-Hyprland)
-
+### 👁️‍🗨️ Kool's Hyprland install Scripts for Debian and Ubuntu Hyprland install scripts   👁️‍🗨️
 - [Debian-Linux (Trixie & SID)](https://github.com/JaKooLit/Debian-Hyprland)
 
-- [NixOS](https://github.com/JaKooLit/NixOS-Hyprland)
-
-- [Ubuntu 24.04 LTS](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.04)
 - [Ubuntu 24.10](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.10)
 - [Ubuntu 25.04 - (ALPHA STAGE)](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/25.04)
 
 
 ### 🪧 Attention 🪧
 - This repo does NOT contain or will NOT install any packages. These are only pre-configured-hyprland configs or dotfiles
-- refer to install scripts what packages needed to install... but atleast, Hyprland packages is needed 😏😏😏 duh!!
+- This  branch was created so its easier to bring some minor tweaks to Debian and Ubuntu Hyprland installs scripts
+- refer to install scripts above what packages needed to install... but atleast, Hyprland packages are needed 😏😏😏 duh!!
 - This repo will be pulled by the Distro-Hyprland install scripts above if you opt to download pre-configured dots
 
 ### 👀 Screenshots 👀
@@ -83,37 +78,15 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 > The auto copy script "copy.sh" will create backups of intended folders to be copied. However, still a good idea to manually backup just incase script failed to backup!
 - clone this repo by using git. Change directory, make executable and run the script
 
-> to download from Master branch
+> to download from `Deb-Untu-old-v-Hyprland` branch
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git
-cd Hyprland-Dots
+git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b Deb-Untu-old-v-Hyprland DebUntu-Hyprland-Dots
+cd DebUntu-Hyprland-Dots
 ```
-
-> to download from Development branch (development and testing)
-```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b development
-cd Hyprland-Dots
-```
-
 - automatic copy/install of pre-configured dots
 ```bash
 chmod +x copy.sh
 ./copy.sh
-```
-
-- to copy/install from releases (stable)
-```bash
-chmod +x release.sh
-./release.sh
-```
-
-- UPGRADE.sh function
-> [!IMPORTANT]
-> You need rsync for it to work
-> you should have already up and running KooL's Hyprland before using this function
-```bash
-chmod +x upgrade.sh
-./upgrade.sh
 ```
 
 ## ⚠️⚠️⚠️ ATTENTION - BACKUPS CREATED by SCRIPT
