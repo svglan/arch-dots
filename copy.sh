@@ -494,7 +494,12 @@ done
 
 printf "\n"
 
-# restoration of old configs
+#  Restoring UserConfigs and UserScripts
+echo -e "Restoring previous User-Configs... \n"
+echo -e "${NOTE}: If you decide to restore the old configs, make sure to handle the updates or changes manually.\n"
+echo -e "Visit and check KooL's Hyprland-Dots GitHub page for the commits.\n"
+
+# UserConfigs
 DIRH="hypr"
 FILES_TO_RESTORE=(
   "ENVariables.conf"
@@ -512,18 +517,25 @@ FILES_TO_RESTORE=(
 DIRPATH=~/.config/"$DIRH"
 BACKUP_DIR=$(get_backup_dirname)
 
+if [ -z "$BACKUP_DIR" ]; then
+  echo "${ERROR} - Backup directory name is empty. Exiting."
+  exit 1
+fi
 
 # Check if the UserConfigs directory exists in ~/.config/hypr
 if [ -d "$DIRPATH/UserConfigs" ]; then
-  # Loop through files to check and offer restoration
   for FILE_NAME in "${FILES_TO_RESTORE[@]}"; do
     BACKUP_FILE="$DIRPATH-backup-$BACKUP_DIR/UserConfigs/$FILE_NAME"
-    
+
     if [ -f "$BACKUP_FILE" ]; then
       printf "\n${INFO} Found ${YELLOW}$FILE_NAME${RESET} in hypr backup...\n"
       read -p "${CAT} Do you want to restore ${ORANGE}$FILE_NAME${RESET} from backup? (y/N): " file_restore
       if [[ "$file_restore" == [Yy]* ]]; then
-        cp "$BACKUP_FILE" "$DIRPATH/UserConfigs/$FILE_NAME" && echo "${OK} - $FILE_NAME restored!" 2>&1 | tee -a "$LOG"
+        if cp "$BACKUP_FILE" "$DIRPATH/UserConfigs/$FILE_NAME"; then
+          echo "${OK} - $FILE_NAME restored!" 2>&1 | tee -a "$LOG"
+        else
+          echo "${ERROR} - Failed to restore $FILE_NAME!" 2>&1 | tee -a "$LOG"
+        fi
       else
         echo "${NOTE} - Skipped restoring $FILE_NAME."
       fi
@@ -531,6 +543,42 @@ if [ -d "$DIRPATH/UserConfigs" ]; then
   done
 else
   echo "${ERROR} - UserConfigs directory does not exist in $DIRPATH. Skipping restoration."
+fi
+
+printf "\n%.0s" {1..2}
+
+# UserScripts
+echo -e "Restoring previous some User-Scripts...\n"
+
+DIRSH="hypr"
+SCRIPTS_TO_RESTORE=(
+  "RofiBeats.sh"
+  "Weather.py"
+  "Weather.sh"
+)
+
+DIRSHPATH=~/.config/"$DIRSH"
+
+if [ -d "$DIRSHPATH/UserScripts" ]; then
+  for SCRIPT_NAME in "${SCRIPTS_TO_RESTORE[@]}"; do
+    BACKUP_SCRIPT="$DIRSHPATH-backup-$BACKUP_DIR/UserScripts/$SCRIPT_NAME"
+
+    if [ -f "$BACKUP_SCRIPT" ]; then
+      printf "\n${INFO} Found ${YELLOW}$SCRIPT_NAME${RESET} in hypr backup...\n"
+      read -p "${CAT} Do you want to restore ${ORANGE}$SCRIPT_NAME${RESET} from backup? (y/N): " script_restore
+      if [[ "$script_restore" == [Yy]* ]]; then
+        if cp "$BACKUP_SCRIPT" "$DIRPATH/UserScripts/$SCRIPT_NAME"; then
+          echo "${OK} - $SCRIPT_NAME restored!" 2>&1 | tee -a "$LOG"
+        else
+          echo "${ERROR} - Failed to restore $SCRIPT_NAME!" 2>&1 | tee -a "$LOG"
+        fi
+      else
+        echo "${NOTE} - Skipped restoring $SCRIPT_NAME."
+      fi
+    fi
+  done
+else
+  echo "${ERROR} - UserScripts directory does not exist in $DIRPATH. Skipping restoration."
 fi
 
 printf "\n%.0s" {1..2}
