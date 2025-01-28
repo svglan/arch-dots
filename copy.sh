@@ -3,9 +3,9 @@
 
 clear
 wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_modified
-waybar_style="$HOME/.config/waybar/style/[Dark] Latte-Wallust combined.css"
-waybar_config="$HOME/.config/waybar/configs/[TOP] Default_v4"
-waybar_config_laptop="$HOME/.config/waybar/configs/[TOP] Default Laptop_v4" 
+waybar_style="$HOME/.config/waybar/style/[Wallust] Chroma Tally.css"
+waybar_config="$HOME/.config/waybar/configs/[TOP] Default_v5"
+waybar_config_laptop="$HOME/.config/waybar/configs/[TOP] Default Laptop_v5" 
 
 # Check if running as root. If root, script will exit
 if [[ $EUID -eq 0 ]]; then
@@ -597,7 +597,8 @@ if hostnamectl | grep -q 'Chassis: desktop'; then
            "$HOME/.config/waybar/configs/[BOT] Default Laptop" \
            "$HOME/.config/waybar/configs/[TOP] Default Laptop_v2" \
            "$HOME/.config/waybar/configs/[TOP] Default Laptop_v3" \
-           "$HOME/.config/waybar/configs/[TOP] Default Laptop_v4" 2>&1 | tee -a "$LOG" || true
+           "$HOME/.config/waybar/configs/[TOP] Default Laptop_v4" \
+           "$HOME/.config/waybar/configs/[TOP] Default Laptop_v5" 2>&1 | tee -a "$LOG" || true
 else
     # Configurations for a laptop or any system other than desktop
     ln -sf "$waybar_config_laptop" "$HOME/.config/waybar/config" 2>&1 | tee -a "$LOG"
@@ -606,7 +607,8 @@ else
            "$HOME/.config/waybar/configs/[BOT] Default" \
            "$HOME/.config/waybar/configs/[TOP] Default_v2" \
            "$HOME/.config/waybar/configs/[TOP] Default_v3" \
-           "$HOME/.config/waybar/configs/[TOP] Default_v4" 2>&1 | tee -a "$LOG" || true
+           "$HOME/.config/waybar/configs/[TOP] Default_v4" \
+           "$HOME/.config/waybar/configs/[TOP] Default_v5" 2>&1 | tee -a "$LOG" || true
 fi
 
 # additional wallpapers
