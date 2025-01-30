@@ -3,23 +3,9 @@
 
 @import "~/.config/rofi/master-config.rasi" 
 
-/* ---- Configuration ---- */
-configuration {
-	font:	"Fira Code SemiBold 13";
-}
 /* ---- Window ---- */
 window {
-    width:	40%;
-}
-
-/* ---- Entry input ---- */
-entry {
-    width:	18%;
-}
-
-/* ---- Listview ---- */
-listview {
-    lines:	8;
+    width:	50%;
 }
 
 /* ---- Mode Switcher ---- */
@@ -27,7 +13,25 @@ button {
     width:	110px;
 }
 
-element-text {
-    font:	"Fira Code SemiBold 16";
+/* ---- Listview ---- */
+listview {
+  columns: 5;
+  lines: 5;
+  fixed-height:	true;
 }
 
+/* ---- Element ---- */
+element {
+  orientation: vertical;
+  padding: 10px 5px 10px 5px;
+  spacing: 6px;
+}
+
+element-icon {
+  size: 3%;
+}
+
+element-text {
+  font: "JetBrainsMono Nerd Font SemiBold 12";
+  horizontal-align: 0.5;
+}

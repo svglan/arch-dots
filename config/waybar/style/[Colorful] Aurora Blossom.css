@@ -32,6 +32,8 @@ tooltip label{
 }
 
 /*-----module groups----*/
+.modules-left,
+.modules-center,
 .modules-right {
     background-image: linear-gradient(45deg, #7287fd 10%, #209fb5 54%, #8839ef 90%);
 	color: black;
@@ -41,24 +43,7 @@ tooltip label{
 	padding-right: 4px;
 	padding-left: 4px;
 }
-.modules-center {
-    background-image: linear-gradient(0deg, #7287fd 10%, #209fb5 54%, #8839ef 90%);
-	color: black;
-	border-radius: 6px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-}
-.modules-left {
-    background-image: linear-gradient(225deg, #7287fd 10%, #209fb5 54%, #8839ef 90%);
-	color: black;
-	border-radius: 6px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-}
+
 /*-----modules indv----*/
 #workspaces button {
 	color: black;
@@ -116,15 +101,24 @@ tooltip label{
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
 #custom-cycle_wall,
-#custom-hint,
+#custom-file_manager,
+#custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
+#custom-hint,
+#custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-settings,
+#custom-spotify,
 #custom-swaync,
+#custom-tty,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -146,9 +140,11 @@ tooltip label{
 	padding: 1px 3px;
 }
 /*-----Indicators----*/
+#custom-hypridle.notactive,
 #idle_inhibitor.activated {
-	color: #2dcc36;
+	color: #39FF14;
 }
+
 #pulseaudio.muted {
 	color: #cc3436;
 }
@@ -165,8 +161,8 @@ tooltip label{
 #battery.critical:not(.charging) {
 	color: #f53c3c;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
