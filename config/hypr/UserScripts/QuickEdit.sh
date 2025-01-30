@@ -1,59 +1,66 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Rofi menu for Quick Edit/View of Settings (SUPER E)
+# Rofi menu for Quick Edit / View of Settings (SUPER E)
 
-# Define preferred text editor and terminal
-edit=${EDITOR:-nano}
+# define your preferred text editor and terminal to use
+editor=${EDITOR:-nano}
 tty=kitty
 
-# Paths to configuration directories
 configs="$HOME/.config/hypr/configs"
 UserConfigs="$HOME/.config/hypr/UserConfigs"
 
-# Function to display the menu options
-menu() {
-    cat <<EOF
-1. View / Edit  Env-variables
-2. View / Edit  Window-Rules
-3. View / Edit  Startup_Apps
-4. View / Edit  User-Keybinds
-5. View / Edit  Monitors
-6. View / Edit  Laptop-Keybinds
-7. View / Edit  User-Settings
-8. View / Edit  Decorations & Animations
-9. View / Edit  Workspace-Rules
-10. View / Edit  Default-Settings
-11. View / Edit  Default-Keybinds
-EOF
+menu(){
+  printf "1. edit Env-variables\n"
+  printf "2. edit Window-Rules\n"
+  printf "3. edit Startup_Apps\n"
+  printf "4. edit User-Keybinds\n"
+  printf "5. edit Monitors\n"
+  printf "6. edit Laptop-Keybinds\n"
+  printf "7. edit User-Settings\n"
+  printf "8. edit Decorations & Animations\n"
+  printf "9. edit Workspace-Rules\n"
+  printf "10. edit Default-Settings\n"
+  printf "11. edit Default-Keybinds\n"
 }
 
-# Main function to handle menu selection
 main() {
     choice=$(menu | rofi -i -dmenu -config ~/.config/rofi/config-compact.rasi | cut -d. -f1)
-    
-    # Map choices to corresponding files
     case $choice in
-        1) file="$UserConfigs/ENVariables.conf" ;;
-        2) file="$UserConfigs/WindowRules.conf" ;;
-        3) file="$UserConfigs/Startup_Apps.conf" ;;
-        4) file="$UserConfigs/UserKeybinds.conf" ;;
-        5) file="$UserConfigs/Monitors.conf" ;;
-        6) file="$UserConfigs/Laptops.conf" ;;
-        7) file="$UserConfigs/UserSettings.conf" ;;
-        8) file="$UserConfigs/UserDecorAnimations.conf" ;;
-        9) file="$UserConfigs/WorkspaceRules.conf" ;;
-        10) file="$configs/Settings.conf" ;;
-        11) file="$configs/Keybinds.conf" ;;
-        *) return ;;  # Do nothing for invalid choices
+        1)
+            $tty $editor "$UserConfigs/ENVariables.conf"
+            ;;
+        2)
+            $tty $editor "$UserConfigs/WindowRules.conf"
+            ;;
+        3)
+            $tty $editor "$UserConfigs/Startup_Apps.conf"
+            ;;
+        4)
+            $tty $editor "$UserConfigs/UserKeybinds.conf"
+            ;;
+        5)
+            $tty $editor "$UserConfigs/Monitors.conf"
+            ;;
+        6)
+            $tty $editor "$UserConfigs/Laptops.conf"
+            ;;
+        7)
+            $tty $editor "$UserConfigs/UserSettings.conf"
+            ;;
+        8)
+            $tty $editor "$UserConfigs/UserDecorAnimations.conf"
+            ;;
+        9)
+            $tty $editor "$UserConfigs/WorkspaceRules.conf"
+            ;;            
+		10)
+            $tty $editor "$configs/Settings.conf"
+            ;;
+        11)
+            $tty $editor "$configs/Keybinds.conf"
+            ;;
+        *)
+            ;;
     esac
-
-    # Open the selected file in the terminal with the text editor
-    $tty -e $edit "$file"
 }
-
-# Check if rofi is already running
-if pidof rofi > /dev/null; then
-  pkill rofi
-fi
 
 main

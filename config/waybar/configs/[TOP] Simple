@@ -2,12 +2,7 @@
 // ### TOP Simple ## //
 
 {
-"include": [
-  "$HOME/.config/waybar/Modules",
-  "$HOME/.config/waybar/ModulesWorkspaces",
-  "$HOME/.config/waybar/ModulesCustom",
-  "$HOME/.config/waybar/ModulesGroups",
-  ],
+"include": "~/.config/waybar/modules",
 "layer": "top", 
 "position": "top", 
 //"mode": "dock",
@@ -19,7 +14,7 @@
 "margin-top": 2,
 
 "modules-left": [	
-	"idle_inhibitor", 
+	"idle_inhibitor",
 	"group/mobo_drawer",
 	"hyprland/workspaces#rw",
 	"tray",

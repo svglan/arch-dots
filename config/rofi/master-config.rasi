@@ -1,10 +1,9 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Master Config 1080p*/
+/* Master Config */
 
 /* ---- Configuration ---- */
 
 configuration {
-	font:						"JetBrainsMono Nerd Font SemiBold 12";
 	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
     display-drun:               "Apps";
@@ -43,7 +42,7 @@ window {
     transparency:               "real";
     cursor:                     "default";
     spacing:                    0px;
-    border:                     3px 0px 3px 0px;
+    border:                     2px;
     border-radius:              30px;
     location:                   center;
     anchor:                     center;
@@ -55,7 +54,7 @@ window {
 
 /* ----- Main Box ----- */
 mainbox {
-	padding:					 12px;
+	padding:					 15px;
     enabled:                     true;
     orientation:                 vertical;
     children:                    [ "inputbar", "listbox" ];
@@ -66,7 +65,7 @@ mainbox {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                     true;
-    padding:                     10px 10px 50px 10px;
+    padding:                     10px 10px 100px 10px;
     margin:                      10px;
     background-color:            transparent;
     border-radius:               25px;
@@ -144,10 +143,11 @@ button selected {
 
 /* ---- Scrollbar ---- */
 scrollbar {
-    border:       				0;
-    handle-color: 				@border-color;
-    handle-width: 				2px ;
-    padding:      				0;
+    width:        4px ;
+    border:       0;
+    handle-color: @border-color;
+    handle-width: 8px ;
+    padding:      0;
 }
 
 /* ---- Elements ---- */
@@ -174,13 +174,9 @@ element normal.active {
 }
 
 element selected.normal {
-    border:                      0px 3px 0px 3px;
-    border-radius:               16px;
-    border-color:                @selected;
-    background-color:            transparent;
-    text-color:                  @selected;
+    background-color:            @selected;
+    text-color:                  @text-selected;
 }
-
 element selected.urgent {
     background-color:            @urgent;
     text-color:                  @text-selected;
@@ -205,10 +201,10 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
+    size:                        36px;
     cursor:                      inherit;
 }
 element-text {
-    font:						"JetBrainsMono Nerd Font SemiBold 12";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

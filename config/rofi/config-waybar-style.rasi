@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (waybar) */
 
-@import "~/.config/rofi/master-config.rasi" 
+@import "~/.config/rofi/config.rasi" 
 
 /* ---- Configuration ---- */
 configuration {
@@ -19,3 +19,8 @@ entry {
   placeholder: "🖼️  Choose Waybar Style";
 }
 
+/* ---- Listview ---- */
+listview {
+  columns: 2;
+  lines: 6;
+}

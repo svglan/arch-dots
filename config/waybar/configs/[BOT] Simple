@@ -2,12 +2,7 @@
 // ### TOP Simple ## //
 
 {
-"include": [
-  "$HOME/.config/waybar/Modules",
-  "$HOME/.config/waybar/ModulesWorkspaces",
-  "$HOME/.config/waybar/ModulesCustom",
-  "$HOME/.config/waybar/ModulesGroups",
-  ],
+"include": "~/.config/waybar/modules",
 "layer": "top", 
 "position": "bottom", 
 //"mode": "dock",

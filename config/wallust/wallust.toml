@@ -1,13 +1,7 @@
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
-# wallust configuration - for wallust version 3.0
+# wallust 3.0*
 
-# How the image is parse, in order to get the colors:
-# full - resized - wal - thumb -  fastresize - kmeans
 backend = "kmeans"
-
-# What color space to use to produce and select the most prominent colors:
-# lab - labmixed - lch - lchmixed
-color_space = "labmixed"
+color_space = "lch"
 
 # NOTE: All filters will fill 16 colors (from color0 to color15), 16 color
 #       variations are the 'ilusion' of more colors by opaquing color1 to color5.
@@ -31,7 +25,7 @@ palette = "dark16"
 #  2 - 10     Perceptible at a glance.
 #  11 - 49    Colors are more similar than opposite
 #  100        Colors are exact opposite
-threshold = 11
+threshold = 10
 
 [templates]
 cava.template = 'colors-cava'
@@ -46,8 +40,8 @@ rofi.target = '~/.config/rofi/wallust/colors-rofi.rasi'
 waybar.template = 'colors-waybar.css'
 waybar.target = '~/.config/waybar/wallust/colors-waybar.css'
 
-kitty.template = 'colors-kitty.conf'
-kitty.target = '~/.config/kitty/kitty-colors.conf'
+#kitty.template = 'colors-kitty.conf'
+#kitty.target = '~/.config/kitty/kitty.conf'
 
 #swaync.template = 'colors-swaync.css'
 #swaync.target = '~/.config/swaync/wallust/colors-wallust.css'

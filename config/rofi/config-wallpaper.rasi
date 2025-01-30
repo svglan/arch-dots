@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (wallpaper) */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "~/.config/rofi/config.rasi" 
 
 /* ---- Configuration ---- */ 
 configuration {
@@ -27,9 +27,8 @@ entry {
 
 /* ---- Listview ---- */
 listview {
-  columns: 5;
+  columns: 4;
   lines: 3;
-  flow: horizontal;
 }
 
 /* ---- Element ---- */
@@ -37,15 +36,15 @@ element {
   orientation: vertical;
   padding: 0px;
   spacing: 0px;
-  border-radius: 12px;
+  border-radius: 15px;
 }
 
 element-icon {
-  size: 15%;
+  size: 20%;
 }
 
 element-text {
-  font: "JetBrainsMono Nerd Font SemiBold 12";
+  font: "Fira Code SemiBold 12";
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }

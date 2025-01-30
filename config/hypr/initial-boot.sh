@@ -1,19 +1,17 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
 # A bash script designed to run only once dotfiles installed
 
 # THIS SCRIPT CAN BE DELETED ONCE SUCCESSFULLY BOOTED!! And also, edit ~/.config/hypr/configs/Settings.conf
-# NOT necessary to do since this script is only designed to run only once as long as the marker exists
-# marker file is located at ~/.config/hypr/.initial_startup_done
+# not necessary to do since this script is only designed to run only once as long as the marker exists
 # However, I do highly suggest not to touch it since again, as long as the marker exist, script wont run
 
 # Variables
 scriptsDir=$HOME/.config/hypr/scripts
 wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_modified
-waybar_style="$HOME/.config/waybar/style/[Wallust] Chroma Tally.css"
-kvantum_theme="catppuccin-mocha-blue"
+waybar_style="$HOME/.config/waybar/style/[Colored] Chroma Glow.css"
+kvantum_theme="Catppuccin-Mocha"
 color_scheme="prefer-dark"
-gtk_theme="Flat-Remix-GTK-Blue-Dark"
+gtk_theme="Andromeda-dark"
 icon_theme="Flat-Remix-Blue-Dark"
 cursor_theme="Bibata-Modern-Ice"
 

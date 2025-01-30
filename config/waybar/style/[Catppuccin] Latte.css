@@ -15,9 +15,8 @@ font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-top: 1px solid @flamingo;
-  border-bottom: 3px solid @lavender;
-  background: alpha(@overlay0, 0.3);
+  border-bottom: 2px solid @sapphire;
+  background: @theme_base_color;
   border-radius: 10px;
 }
 
@@ -25,12 +24,21 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+window#waybar.empty,
+window#waybar.empty #window {
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+}
+
 #taskbar button,
 #workspaces button {
     box-shadow: none;
 	text-shadow: none;
-    padding: 4px;
+    padding: 0px;
     border-radius: 9px;
+    padding-left: 4px;
+    padding-right: 4px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -90,24 +98,15 @@ window#waybar.hidden {
 #wireplumber,
 #workspaces,
 #custom-backlight,
-#custom-browser,
-#custom-cava_mviz,
 #custom-cycle_wall,
-#custom-file_manager,
-#custom-keybinds,
+#custom-hint,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
-#custom-hint,
-#custom-hypridle,
 #custom-menu,
-#custom-playerctl,
-#custom-power_vertical,
 #custom-power,
-#custom-settings,
-#custom-spotify,
-#custom-swaync,
-#custom-tty,
+#custom-speaker,
+#custom-power_vertical,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -126,10 +125,8 @@ window#waybar.hidden {
 	padding-left: 6px;
 }
 
-/*-----Indicators----*/
-#custom-hypridle.notactive,
-#idle_inhibitor.activated {
-	color: #39FF14;
+#idle_inhibitor {
+  	color: @blue;
 }
 
 #backlight {
@@ -149,11 +146,11 @@ window#waybar.hidden {
 #battery.critical:not(.charging) {
   	background-color: @red;
   	color: @theme_text_color;
-	animation-name: blink;
-	animation-duration: 3.0s;
-	animation-timing-function: steps(12);
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  	animation-name: blink;
+  	animation-duration: 0.5s;
+  	animation-timing-function: linear;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate;
   	box-shadow: inset 0 -3px transparent;
 }
 
@@ -247,14 +244,11 @@ window#waybar.hidden {
 #network {
   	color: @teal;
 }
-
 #network.disconnected,
 #network.disabled {
   	background-color: @surface0;
   	color: @text;
 }
-
-#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -264,15 +258,33 @@ window#waybar.hidden {
 	box-shadow: none;
 }
 
-#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
 }
 
-#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
+	border-radius: 5px;
+}
+
+#backlight-slider slider {
+	min-width: 0px;
+	min-height: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#backlight-slider trough {
+	min-width: 80px;
+	min-height: 10px;
+	border-radius: 5px;
+}
+
+#backlight-slider highlight {
+	min-width: 10px;
 	border-radius: 5px;
 }

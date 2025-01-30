@@ -2,6 +2,7 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Script for waybar styles
 
+set -euo pipefail
 IFS=$'\n\t'
 
 # Define directories
@@ -43,7 +44,7 @@ main() {
 # Kill Rofi if already running before execution
 if pgrep -x "rofi" >/dev/null; then
     pkill rofi
-    #exit 0
+    exit 0
 fi
 
 main

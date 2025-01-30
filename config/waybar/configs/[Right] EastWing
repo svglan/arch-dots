@@ -3,13 +3,7 @@
 // ### RIGHT PANEL ### //
 
 {
-"include": [
-  "$HOME/.config/waybar/Modules",
-  "$HOME/.config/waybar/ModulesWorkspaces",
-  "$HOME/.config/waybar/ModulesCustom",
-  "$HOME/.config/waybar/ModulesGroups",
-  "$HOME/.config/waybar/ModulesVertical",
-  ],
+"include": "~/.config/waybar/modules",
 "layer": "top",
 "position": "right",
 "margin-top": 8,

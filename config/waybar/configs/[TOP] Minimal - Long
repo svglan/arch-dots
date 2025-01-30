@@ -3,12 +3,7 @@
 // ### Minimal - Long ### //
 
 {
-"include": [
-  "$HOME/.config/waybar/Modules",
-  "$HOME/.config/waybar/ModulesWorkspaces",
-  "$HOME/.config/waybar/ModulesCustom",
-  "$HOME/.config/waybar/ModulesGroups",
-  ],
+"include": "~/.config/waybar/modules",
 "layer": "top",
 //"mode": "dock",
 "exclusive": true,
@@ -35,7 +30,7 @@
 	"idle_inhibitor",
 	],
 "modules-right": [
-	"group/mobo_drawer",
+	"group/motherboard",
 	"custom/separator#blank_2",
 	"group/laptop",
 	"custom/separator#blank_2",

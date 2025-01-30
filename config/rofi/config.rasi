@@ -3,29 +3,12 @@
 
 @import "~/.config/rofi/master-config.rasi" 
 
-/* ---- Window ---- */
-window {
-    width:	50%;
-}
-/* ---- Listview ---- */
-listview {
-  columns: 5;
-  lines: 5;
-  fixed-height:	true;
-}
-
-/* ---- Element ---- */
-element {
-  orientation: vertical;
-  padding: 10px 5px 10px 5px;
-  spacing: 6px;
-}
-
-element-icon {
-  size: 3%;
+/* ---- Configuration ---- */
+configuration {
+	font: "Fira Code SemiBold 12";
 }
 
 element-text {
-  font: "JetBrainsMono Nerd Font SemiBold 10";
-  horizontal-align: 0.5;
+    font:	"Fira Code SemiBold 14";
 }
+
