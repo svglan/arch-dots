@@ -1,6 +1,6 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 
-// ### DEFAULT v5 - Top ### //
+// ### DEFAULT v5 (Laptop)  - Top ### //
 {
 "include": [
   "$HOME/.config/waybar/Modules",
@@ -46,6 +46,8 @@
 "modules-right": [
 	"tray",
 	"network#speed",
+	"custom/separator#dot-line",
+	"group/laptop",
 	"custom/separator#dot-line",
 	"group/mobo_drawer",
 	"custom/separator#line",  

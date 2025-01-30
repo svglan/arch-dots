@@ -196,6 +196,16 @@ if command -v asusctl >/dev/null 2>&1; then
     sed -i '/exec-once = rog-control-center &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 
+# Check if blueman-applet is installed and add blueman-applet on Startup
+if command -v blueman-applet >/dev/null 2>&1; then
+    sed -i '/exec-once = blueman-applet &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+fi
+
+# Check if ags is installed and add ags on Startup
+if command -v ags >/dev/null 2>&1; then
+    sed -i '/exec-once = ags &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+fi
+
 printf "\n"
 
 # Checking if neovim or vim is installed and offer user if they want to make as default editor
