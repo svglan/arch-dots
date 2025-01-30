@@ -286,7 +286,6 @@ while true; do
   answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
 # Check if the answer is valid
-# Check if the answer is valid
 if [[ "$answer" == "y" ]]; then
     # Modify waybar config if 12hr is selected
     
@@ -315,6 +314,8 @@ if [[ "$answer" == "y" ]]; then
 
     sed -i 's/^\s*text = cmd\[update:1000\] echo "\$(date +"%S")"/# &/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
     sed -i 's/^\(\s*\)# *text = cmd\[update:1000\] echo "\$(date +"%S %p")" #AM\/PM/\1    text = cmd\[update:1000\] echo "\$(date +"%S %p")" #AM\/PM/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
+    
+    echo "${OK} 12H format set on waybar clocks succesfully." 2>&1 | tee -a "$LOG"
 
     # for SDDM (simple-sddm)
     sddm_folder="/usr/share/sddm/themes/simple-sddm"
