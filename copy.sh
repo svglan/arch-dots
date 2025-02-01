@@ -50,7 +50,7 @@ xdg-user-dirs-update 2>&1 | tee -a "$LOG" || true
 
 # setting up for nvidia
 if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
-  echo "Nvidia GPU detected. Setting up proper env's and configs" 2>&1 | tee -a "$LOG" || true
+  echo "${INFO} Nvidia GPU detected. Setting up proper env's and configs" 2>&1 | tee -a "$LOG" || true
   sed -i '/env = LIBVA_DRIVER_NAME,nvidia/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = __GLX_VENDOR_LIBRARY_NAME,nvidia/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = NVD_BACKEND,direct/s/^#//' config/hypr/UserConfigs/ENVariables.conf
@@ -63,7 +63,7 @@ fi
 
 # uncommenting WLR_RENDERER_ALLOW_SOFTWARE,1 if running in a VM is detected
 if hostnamectl | grep -q 'Chassis: vm'; then
-  echo "System is running in a virtual machine." 2>&1 | tee -a "$LOG" || true
+  echo "${INFO} System is running in a virtual machine." 2>&1 | tee -a "$LOG" || true
   # enabling proper ENV's for Virtual Environment which should help
   sed -i 's/^\([[:space:]]*no_hardware_cursors[[:space:]]*=[[:space:]]*\)2/\1true/' config/hypr/UserConfigs/UserSettings.conf
   sed -i '/env = WLR_RENDERER_ALLOW_SOFTWARE,1/s/^#//' config/hypr/UserConfigs/ENVariables.conf
@@ -73,14 +73,14 @@ fi
 
 # Proper Polkit for NixOS
 if hostnamectl | grep -q 'Operating System: NixOS'; then
-  echo "You Distro is NixOS. Setting up properly." 2>&1 | tee -a "$LOG" || true
+  echo "${INFO} NixOS Distro Detected. Setting up properly." 2>&1 | tee -a "$LOG" || true
   sed -i -E '/^#?exec-once = \$scriptsDir\/Polkit-NixOS\.sh/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
   sed -i '/^exec-once = \$scriptsDir\/Polkit\.sh$/ s/^#*/#/' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 
 # Check if dpkg is installed (use to check if Debian or Ubuntu or based distros
 if command -v dpkg &> /dev/null; then
-	echo "Debian/Ubuntu based distro. Disabling pyprland" 2>&1 | tee -a "$LOG" || true
+	echo "${INFO} Debian/Ubuntu based distro. Disabling pyprland since it does not work properly" 2>&1 | tee -a "$LOG" || true
   # disabling pyprland as causing issues
   sed -i '/^exec-once = pypr &/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
 fi
@@ -108,9 +108,9 @@ if [ "$layout" = "(unset)" ]; then
   while true; do
     printf "\n%.0s" {1..1}
     print_color $WARNING "
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-        STOP AND READ
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+    █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+            STOP AND READ
+    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 
     !!! IMPORTANT WARNING !!!
 
@@ -125,7 +125,7 @@ If you are not sure, just type us
 
 NOTE:
 •  You can also set more than 2 keyboard layouts
-•  For example us, kr, gb, ru
+•  For example ${YELLOW}us, kr, gb, ru${RESET}
 "
     printf "\n%.0s" {1..1}
     read -p "${CAT} - Please enter the correct keyboard layout: " new_layout
@@ -157,9 +157,9 @@ while true; do
     [nN])
         printf "\n%.0s" {1..2}
         print_color $WARNING "
-█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-        STOP AND READ
-█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+    █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+            STOP AND READ
+    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 
     !!! IMPORTANT WARNING !!!
 
@@ -174,7 +174,7 @@ If you are not sure, just type us
 
 NOTE:
 •  You can also set more than 2 keyboard layouts
-•  For example us, kr, gb, ru
+•  For example ${YELLOW}us, kr, gb, ru${RESET}
 "
         printf "\n%.0s" {1..1}
         
@@ -531,8 +531,8 @@ fi
 
 if [ -d "$BACKUP_DIR_PATH" ]; then
   echo -e "${NOTE} Restoring previous ${MAGENTA}User-Configs${RESET}... "
-  echo -e "${WARN} If you decide to restore the old configs, make sure to handle the updates or changes manually."
-  echo -e "${INFO} Kindly Visit and check KooL's Hyprland-Dots GitHub page for the commits."
+  echo -e "${WARN} ${WARNING}If you decide to restore the old configs, make sure to handle the updates or changes manually.${RESET}"
+  echo -e "${INFO} Kindly Visit and check KooL's Hyprland-Dots GitHub page for the history of commits."
 
   for FILE_NAME in "${FILES_TO_RESTORE[@]}"; do
     BACKUP_FILE="$BACKUP_DIR_PATH/$FILE_NAME"
@@ -624,8 +624,8 @@ else
 fi
 
 # additional wallpapers
-echo "$(tput setaf 6) By default only a few wallpapers are copied...$(tput sgr0)"
-printf "\n"
+printf "\n%.0s" {1..1}
+echo "${MAGENTA}By default only a few wallpapers are copied${RESET}..."
 
 while true; do
   read -rp "${CAT} Would you like to download additional wallpapers? ${WARN} This is more than >700mb (y/n)" WALL
