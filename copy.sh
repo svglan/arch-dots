@@ -178,7 +178,7 @@ ${MAGENTA} NOTE:${RESET}
   esac
 done
 
-printf "\n"
+printf "\n%.0s" {1..1}
 
 # Check if asusctl is installed and add rog-control-center on Startup
 if command -v asusctl >/dev/null 2>&1; then
@@ -190,12 +190,14 @@ if command -v blueman-applet >/dev/null 2>&1; then
     sed -i '/exec-once = blueman-applet &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 
-# Check if ags is installed and add ags on Startup
+# Check if ags is installed edit ags behaviour on configs
 if command -v ags >/dev/null 2>&1; then
-    sed -i '/exec-once = ags &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+    sed -i '/#exec-once = ags &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+    sed -i '/#ags -q && ags &/s/^#//' config/hypr/scripts/RefreshNoWaybar.sh
+    sed -i '/#ags -q && ags &/s/^#//' config/hypr/scripts/Refresh.sh
 fi
 
-printf "\n"
+printf "\n%.0s" {1..1}
 
 # Checking if neovim or vim is installed and offer user if they want to make as default editor
 # Function to modify the ENVariables.conf file
