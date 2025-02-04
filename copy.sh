@@ -2,8 +2,8 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
 
 clear
-wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_modified
-waybar_style="$HOME/.config/waybar/style/[Wallust] Chroma Tally.css"
+wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_current
+waybar_style="$HOME/.config/waybar/style/[Extra] Modern-Combined - Transparent.css"
 waybar_config="$HOME/.config/waybar/configs/[TOP] Default_v5"
 waybar_config_laptop="$HOME/.config/waybar/configs/[TOP] Default Laptop_v5" 
 
@@ -107,17 +107,16 @@ if [ "$layout" = "(unset)" ]; then
     !!! IMPORTANT WARNING !!!
 
 The Default Keyboard Layout could not be detected
-
 You need to set it Manually
 
-!!! WARNING !!!
+    !!! WARNING !!!
+
 Setting a wrong Keyboard Layout will cause Hyprland to crash
+If you are not sure, just type ${YELLOW}us${RESET}
 
-If you are not sure, just type us
-
-NOTE:
+${MAGENTA} NOTE:${RESET}
 •  You can also set more than 2 keyboard layouts
-•  For example ${YELLOW}us, kr, gb, ru${RESET}
+•  For example: ${YELLOW}us, kr, gb, ru${RESET}
 "
     printf "\n%.0s" {1..1}
     read -p "${CAT} - Please enter the correct keyboard layout: " new_layout
@@ -140,7 +139,6 @@ while true; do
 
   case $keyboard_layout in
     [yY])
-        # If the detected layout is correct, update the 'kb_layout =' line in the file
         awk -v layout="$layout" '/kb_layout/ {$0 = "  kb_layout = " layout} 1' config/hypr/UserConfigs/UserSettings.conf > temp.conf
         mv temp.conf config/hypr/UserConfigs/UserSettings.conf
         
@@ -156,23 +154,21 @@ while true; do
     !!! IMPORTANT WARNING !!!
 
 The Default Keyboard Layout could not be detected
-
 You need to set it Manually
 
-!!! WARNING !!!
+    !!! WARNING !!!
+
 Setting a wrong Keyboard Layout will cause Hyprland to crash
+If you are not sure, just type ${YELLOW}us${RESET}
 
-If you are not sure, just type us
-
-NOTE:
+${MAGENTA} NOTE:${RESET}
 •  You can also set more than 2 keyboard layouts
-•  For example ${YELLOW}us, kr, gb, ru${RESET}
+•  For example: ${YELLOW}us, kr, gb, ru${RESET}
 "
         printf "\n%.0s" {1..1}
         
         read -p "${CAT} - Please enter the correct keyboard layout: " new_layout
-        
-        # Update the 'kb_layout =' line with the correct layout in the file
+
         awk -v new_layout="$new_layout" '/kb_layout/ {$0 = "  kb_layout = " new_layout} 1' config/hypr/UserConfigs/UserSettings.conf > temp.conf
         mv temp.conf config/hypr/UserConfigs/UserSettings.conf
         echo "${OK} kb_layout $new_layout configured in settings." 2>&1 | tee -a "$LOG" 
@@ -233,7 +229,7 @@ if [[ "$EDITOR_SET" -eq 0 ]] && command -v vim &> /dev/null; then
 fi
 
 if [[ "$EDITOR_SET" -eq 0 ]]; then
-    echo "${MAGENTA} Neither neovim nor vim is installed or selected as default."
+    echo "${YELLOW} Neither neovim nor vim is installed or selected as default." 2>&1 | tee -a "$LOG"
 fi
 
 printf "\n"
@@ -280,74 +276,87 @@ printf "\n"
 
 # Ask whether to change to 12hr format
 while true; do
-  echo -e "$MAGENTA By default, configs are in 24H format."
-  read -p "$CAT Do you want to change to 12H format (AM/PM)? (y/n): " answer
+    echo -e "$MAGENTA By default, KooL's Dots are configured in 24H clock format."
+    read -p "$CAT Do you want to change to 12H format or AM/PM format? (y/n): " answer
 
-  # Convert the answer to lowercase for comparison
-  answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
+    # Convert the answer to lowercase for comparison
+    answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 
-# Check if the answer is valid
-if [[ "$answer" == "y" ]]; then
-    # Modify waybar config if 12hr is selected
-    
-    # Clock 1
-    sed -i 's#^\(\s*\)//\("format": " {:%I:%M %p}",\) #\1\2 #g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    sed -i 's#^\(\s*\)\("format": " {:%H:%M:%S}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    
-    # Clock 2
-    sed -i 's#^\(\s*\)\("format": "  {:%H:%M}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    
-    # Clock 3
-    sed -i 's#^\(\s*\)//\("format": "{:%I:%M %p - %d/%b}",\) #\1\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    sed -i 's#^\(\s*\)\("format": "{:%H:%M - %d/%b}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    
-    # Clock 4
-    sed -i 's#^\(\s*\)//\("format": "{:%B | %a %d, %Y | %I:%M %p}",\) #\1\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    sed -i 's#^\(\s*\)\("format": "{:%B | %a %d, %Y | %H:%M}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+    # Check if the answer is valid
+    if [[ "$answer" == "y" ]]; then
+        # Modify waybar clock modules if 12hr is selected    
+        # Clock 1
+        sed -i 's#^\(\s*\)//\("format": " {:%I:%M %p}",\) #\1\2 #g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        sed -i 's#^\(\s*\)\("format": " {:%H:%M:%S}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        
+        # Clock 2
+        sed -i 's#^\(\s*\)\("format": "  {:%H:%M}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        
+        # Clock 3
+        sed -i 's#^\(\s*\)//\("format": "{:%I:%M %p - %d/%b}",\) #\1\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        sed -i 's#^\(\s*\)\("format": "{:%H:%M - %d/%b}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        
+        # Clock 4
+        sed -i 's#^\(\s*\)//\("format": "{:%B | %a %d, %Y | %I:%M %p}",\) #\1\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        sed -i 's#^\(\s*\)\("format": "{:%B | %a %d, %Y | %H:%M}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
 
-    # Clock 5
-    sed -i 's#^\(\s*\)//\("format": "{:%A, %I:%M %P}",\) #\1\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-    sed -i 's#^\(\s*\)\("format": "{:%a %d | %H:%M}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
-       
-    # for hyprlock
-    sed -i 's/^\s*text = cmd\[update:1000\] echo "\$(date +"%H")"/# &/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
-    sed -i 's/^\(\s*\)# *text = cmd\[update:1000\] echo "\$(date +"%I")" #AM\/PM/\1    text = cmd\[update:1000\] echo "\$(date +"%I")" #AM\/PM/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
+        # Clock 5
+        sed -i 's#^\(\s*\)//\("format": "{:%A, %I:%M %P}",\) #\1\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        sed -i 's#^\(\s*\)\("format": "{:%a %d | %H:%M}",\) #\1//\2#g' config/waybar/Modules 2>&1 | tee -a "$LOG"
+        
+        # for hyprlock
+        sed -i 's/^\s*text = cmd\[update:1000\] echo "\$(date +"%H")"/# &/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
+        sed -i 's/^\(\s*\)# *text = cmd\[update:1000\] echo "\$(date +"%I")" #AM\/PM/\1    text = cmd\[update:1000\] echo "\$(date +"%I")" #AM\/PM/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
 
-    sed -i 's/^\s*text = cmd\[update:1000\] echo "\$(date +"%S")"/# &/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
-    sed -i 's/^\(\s*\)# *text = cmd\[update:1000\] echo "\$(date +"%S %p")" #AM\/PM/\1    text = cmd\[update:1000\] echo "\$(date +"%S %p")" #AM\/PM/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
-    
-    echo "${OK} 12H format set on waybar clocks succesfully." 2>&1 | tee -a "$LOG"
+        sed -i 's/^\s*text = cmd\[update:1000\] echo "\$(date +"%S")"/# &/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
+        sed -i 's/^\(\s*\)# *text = cmd\[update:1000\] echo "\$(date +"%S %p")" #AM\/PM/\1    text = cmd\[update:1000\] echo "\$(date +"%S %p")" #AM\/PM/' config/hypr/hyprlock.conf 2>&1 | tee -a "$LOG"
+        
+        echo "${OK} 12H format set on waybar clocks succesfully." 2>&1 | tee -a "$LOG"
 
-    # for SDDM (simple-sddm)
-    sddm_folder="/usr/share/sddm/themes/simple-sddm"
-    if [ -d "$sddm_folder" ]; then
-      echo "Simple sddm exists. Editing to 12H format" 2>&1 | tee -a "$LOG"
+      # Function to apply 12H format to SDDM themes
+      apply_sddm_12h_format() {
+      local sddm_directory=$1
 
-      sudo sed -i 's|^## HourFormat="hh:mm AP"|HourFormat="hh:mm AP"|' "$sddm_folder/theme.conf" 2>&1 | tee -a "$LOG" || true
-      sudo sed -i 's|^HourFormat="HH:mm"|## HourFormat="HH:mm"|' "$sddm_folder/theme.conf" 2>&1 | tee -a "$LOG" || true
+      # Check if the directory exists
+      if [ -d "$sddm_directory" ]; then
+        echo "Editing ${SKY_BLUE}$sddm_directory${RESET} to 12H format" 2>&1 | tee -a "$LOG"
 
-      echo "${OK} 12H format set to SDDM theme successfully." 2>&1 | tee -a "$LOG"
-    fi
+        sudo sed -i 's|^## HourFormat="hh:mm AP"|HourFormat="hh:mm AP"|' "$sddm_directory/theme.conf" 2>&1 | tee -a "$LOG" || true
+        sudo sed -i 's|^HourFormat="HH:mm"|## HourFormat="HH:mm"|' "$sddm_directory/theme.conf" 2>&1 | tee -a "$LOG" || true
+      fi
+      }
 
-        # for SDDM (simple-sddm-2)
-    sddm_folder_2="/usr/share/sddm/themes/simple-sddm-2"
-    if [ -d "$sddm_folder_2" ]; then
-      echo "Simple sddm 2 exists. Editing to 12H format" 2>&1 | tee -a "$LOG"
+      # Applying to different SDDM themes
+      apply_sddm_12h_format "/usr/share/sddm/themes/simple-sddm"
+      apply_sddm_12h_format "/usr/share/sddm/themes/simple-sddm-2"
 
-      sudo sed -i 's|^## HourFormat="hh:mm AP"|HourFormat="hh:mm AP"|' "$sddm_folder_2/theme.conf" 2>&1 | tee -a "$LOG" || true
-      sudo sed -i 's|^HourFormat="HH:mm"|## HourFormat="HH:mm"|' "$sddm_folder_2/theme.conf" 2>&1 | tee -a "$LOG" || true
+      # For SDDM (sequoia_2)
+      sddm_directory_3="/usr/share/sddm/themes/sequoia_2"
+      if [ -d "$sddm_directory_3" ]; then
+        echo "${YELLOW}sddm sequoia_2${RESET} theme exists. Editing to 12H format" 2>&1 | tee -a "$LOG"
 
-      echo "${OK} 12H format set to SDDM theme successfully." 2>&1 | tee -a "$LOG"
-    fi
+        # Comment out the existing clockFormat="HH:mm" line
+        sudo sed -i 's|^clockFormat="HH:mm"|## clockFormat="HH:mm"|' "$sddm_directory_3/theme.conf" 2>&1 | tee -a "$LOG" || true
+
+        # Insert the new clockFormat="hh:mm AP" line if it's not already present
+        if ! grep -q 'clockFormat="hh:mm AP"' "$sddm_directory_3/theme.conf"; then
+          sudo sed -i '/^clockFormat=/a clockFormat="hh:mm AP"' "$sddm_directory_3/theme.conf" 2>&1 | tee -a "$LOG" || true
+        fi
+
+        echo "${OK} 12H format set to SDDM successfully." 2>&1 | tee -a "$LOG"
+      fi
 
     break
-  elif [[ "$answer" == "n" ]]; then
-    echo "${NOTE} You chose not to change to 12H format." 2>&1 | tee -a "$LOG"
-    break
-  else
-    echo "${ERROR} Invalid choice. Please enter y for yes or n for no."
-  fi
+ 
+
+    elif [[ "$answer" == "n" ]]; then
+        echo "${NOTE} You chose not to change to 12H format." 2>&1 | tee -a "$LOG"
+        break  # Exit the loop if the user chooses "n"
+    else
+        echo "${ERROR} Invalid choice. Please enter y for yes or n for no."
+    fi
 done
+
 
 printf "\n"
 
@@ -360,7 +369,7 @@ if [[ "$border_choice" =~ ^[Yy]$ ]]; then
     mv config/hypr/UserScripts/RainbowBorders.sh config/hypr/UserScripts/RainbowBorders.bak.sh
     
     sed -i '/exec-once = \$UserScripts\/RainbowBorders.sh \&/s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
-    sed -i '/  animation = borderangle, 1, 180, liner, loop/s/^/#/' config/hypr/UserConfigs/UserDecorAnimations.conf
+    sed -i '/  animation = borderangle, 1, 180, liner, loop/s/^/#/' config/hypr/UserConfigs/UserAnimations.conf
     
     echo "${OK} Rainbow borders is now disabled." 2>&1 | tee -a "$LOG"
 else
@@ -403,7 +412,6 @@ for DIR2 in $DIRS; do
       case "$DIR1_CHOICE" in
         [Yy]* )
           BACKUP_DIR=$(get_backup_dirname)
-          echo -e "${NOTE} - Config for ${YELLOW}$DIR2${RESET} found, attempting to back up."
           
           mv "$DIRPATH" "$DIRPATH-backup-$BACKUP_DIR" 2>&1 | tee -a "$LOG"
           if [ $? -eq 0 ]; then
@@ -471,7 +479,7 @@ for DIR_NAME in $DIR; do
   
   # Backup the existing directory if it exists
   if [ -d "$DIRPATH" ]; then
-    echo -e "${NOTE} - Config for ${YELLOW}$DIR_NAME${RESET} found, attempting to back up."
+    echo -e "\n${NOTE} - Config for ${YELLOW}$DIR_NAME${RESET} found, attempting to back up."
     BACKUP_DIR=$(get_backup_dirname)
     
     # Backup the existing directory
@@ -508,7 +516,8 @@ FILES_TO_RESTORE=(
   "Laptops.conf"
   "Monitors.conf"
   "Startup_Apps.conf"
-  "UserDecorAnimations.conf"
+  "UserDecorations.conf"
+  "UserAnimations.conf"
   "UserKeybinds.conf"
   "UserSettings.conf"
   "WindowRules.conf"
@@ -526,7 +535,7 @@ fi
 
 if [ -d "$BACKUP_DIR_PATH" ]; then
   echo -e "${NOTE} Restoring previous ${MAGENTA}User-Configs${RESET}... "
-  echo -e "${WARN} ${WARNING}If you decide to restore the old configs, make sure to handle the updates or changes manually.${RESET}"
+  echo -e "${WARN} ${WARNING}If you decide to restore the old configs, make sure to handle the updates or changes manually${RESET}."
   echo -e "${INFO} Kindly Visit and check KooL's Hyprland-Dots GitHub page for the history of commits."
 
   for FILE_NAME in "${FILES_TO_RESTORE[@]}"; do
@@ -583,11 +592,15 @@ if [ -d "$BACKUP_DIR_PATH" ]; then
   done
 fi
 
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..}
 
-# Wallpapers
+# wallpaper stuff
 mkdir -p ~/Pictures/wallpapers
-cp -r wallpapers ~/Pictures/ && { echo "${OK} some wallpapers compied!"; } || { echo "${ERROR} Failed to copy some wallpapers."; exit 1; } 2>&1 | tee -a "$LOG"
+if cp -r wallpapers ~/Pictures/; then
+  echo "${OK} Some ${MAGENTA}wallpapers${RESET} copied successfully!" | tee -a "$LOG"
+else
+  echo "${ERROR} Failed to copy some ${YELLOW}wallpapers${RESET}" | tee -a "$LOG"
+fi
  
 # Set some files as executable
 chmod +x ~/.config/hypr/scripts/* 2>&1 | tee -a "$LOG"
@@ -618,12 +631,41 @@ else
            "$HOME/.config/waybar/configs/[TOP] Default_v5" 2>&1 | tee -a "$LOG" || true
 fi
 
+printf "\n%.0s" {1..2}
+
+# for SDDM (sequoia_2)
+sddm_sequioa="/usr/share/sddm/themes/sequoia_2"
+if [ -d "$sddm_sequioa" ]; then
+  while true; do
+    read -rp "${CAT} SDDM sequoia_2 theme detected! Apply current wallpaper as SDDM background? (y/n): " SDDM_WALL
+    
+    # Remove any leading/trailing whitespace or newlines from input
+    SDDM_WALL=$(echo "$SDDM_WALL" | tr -d '\n' | tr -d ' ')
+
+    case $SDDM_WALL in
+      [Yy])
+        # Copy the wallpaper, ignore errors if the file exists or fails
+        sudo cp -r "config/hypr/wallpaper_effects/.wallpaper_current" "/usr/share/sddm/themes/sequoia_2/backgrounds/default" || true
+        echo "${NOTE} Current wallpaper applied as default SDDM background" 2>&1 | tee -a "$LOG"
+        break
+        ;;
+      [Nn])
+        echo "${NOTE} You chose not to apply the current wallpaper to SDDM." 2>&1 | tee -a "$LOG"
+        break
+        ;;
+      *)
+        echo "Please enter 'y' or 'n' to proceed."
+        ;;
+    esac
+  done
+fi
+
 # additional wallpapers
 printf "\n%.0s" {1..1}
 echo "${MAGENTA}By default only a few wallpapers are copied${RESET}..."
 
 while true; do
-  read -rp "${CAT} Would you like to download additional wallpapers? ${WARN} This is more than >700mb (y/n)" WALL
+  read -rp "${CAT} Would you like to download additional wallpapers? ${WARN} This is more than 800 MB (y/n)" WALL
   case $WALL in
     [Yy])
       echo "${NOTE} Downloading additional wallpapers..."
@@ -719,7 +761,10 @@ printf "\n%.0s" {1..2}
 # initialize wallust to avoid config error on hyprland
 wallust run -s $wallpaper 2>&1 | tee -a "$LOG"
 
-printf "\n%.0s" {1..4}
-printf "${OK} GREAT! KooL's Hyprland-Dots is now Loaded & Ready !!!"
-printf "\n%.0s" {1..1}
-printf "${MAGENTA} HOWEVER I HIGHLY SUGGEST to logout and re-login or better reboot to avoid any issues\n\n"
+printf "\n%.0s" {1..2}
+printf "${OK} GREAT! KooL's Hyprland-Dots is now Loaded & Ready !!! "
+printf "\n%.0s" {1..2}
+printf "${INFO} However, it is ${MAGENTA}HIGHLY SUGGESTED${RESET} to logout and re-login or better reboot to avoid any issues"
+printf "\n%.0s" {1..2}
+printf "${SKY_BLUE}Thank you${RESET} for using ${MAGENTA}KooL's Hyprland Configuration${RESET}... ${YELLOW}ENJOY!!!${RESET}"
+printf "\n%.0s" {1..3}
