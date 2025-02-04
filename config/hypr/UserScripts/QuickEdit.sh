@@ -20,9 +20,9 @@ menu() {
 5. View / Edit  Monitors
 6. View / Edit  Laptop-Keybinds
 7. View / Edit  User-Settings
-8. View / Edit  Decorations & Animations
-9. View / Edit  Workspace-Rules
-10. View / Edit  Default-Settings
+8. View / Edit  Decorations
+9. View / Edit  Animations
+10. View / Edit  Workspace-Rules
 11. View / Edit  Default-Keybinds
 EOF
 }
@@ -40,9 +40,9 @@ main() {
         5) file="$UserConfigs/Monitors.conf" ;;
         6) file="$UserConfigs/Laptops.conf" ;;
         7) file="$UserConfigs/UserSettings.conf" ;;
-        8) file="$UserConfigs/UserDecorAnimations.conf" ;;
-        9) file="$UserConfigs/WorkspaceRules.conf" ;;
-        10) file="$configs/Settings.conf" ;;
+        8) file="$UserConfigs/UserDecorations.conf" ;;
+        9) file="$UserConfigs/UserAnimations.conf" ;;
+        10) file="$UserConfigs/WorkspaceRules.conf" ;;
         11) file="$configs/Keybinds.conf" ;;
         *) return ;;  # Do nothing for invalid choices
     esac

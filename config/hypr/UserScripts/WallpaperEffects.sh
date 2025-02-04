@@ -10,6 +10,7 @@ focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{pri
 
 # Directory for swaync
 iDIR="$HOME/.config/swaync/images"
+iDIRi="$HOME/.config/swaync/icons"
 
 # swww transition config
 FPS=60
@@ -26,6 +27,8 @@ declare -A effects=(
     ["Charcoal"]="convert $current_wallpaper -charcoal 0x5 $wallpaper_output"
     ["Edge Detect"]="convert $current_wallpaper -edge 1 $wallpaper_output"
     ["Emboss"]="convert $current_wallpaper -emboss 0x5 $wallpaper_output"
+    ["Frame Raised"]="convert $current_wallpaper +raise 150 $wallpaper_output"
+    ["Frame Sunk"]="convert $current_wallpaper -raise 150 $wallpaper_output"
     ["Negate"]="convert $current_wallpaper -negate $wallpaper_output"
     ["Oil Paint"]="convert $current_wallpaper -paint 4 $wallpaper_output"
     ["Posterize"]="convert $current_wallpaper -posterize 4 $wallpaper_output"
@@ -33,7 +36,8 @@ declare -A effects=(
     ["Sepia Tone"]="convert $current_wallpaper -sepia-tone 65% $wallpaper_output"
     ["Solarize"]="convert $current_wallpaper -solarize 80% $wallpaper_output"
     ["Sharpen"]="convert $current_wallpaper -sharpen 0x5 $wallpaper_output"
-    ["Vignette"]="convert $current_wallpaper -vignette 0x5 $wallpaper_output"
+    ["Vignette"]="convert $current_wallpaper -vignette 0x3 $wallpaper_output"
+    ["Vignette-black"]="convert $current_wallpaper -background black -vignette 0x3 $wallpaper_output"
     ["Zoomed"]="convert $current_wallpaper -gravity Center -extent 1:1 $wallpaper_output"
 )
 
@@ -62,8 +66,7 @@ main() {
         [[ "$effect" != "No Effects" ]] && options+=("$effect")
     done
 
-    # Show rofi menu and handle user choice
-    choice=$(printf "%s\n" "${options[@]}" | LC_COLLATE=C sort | rofi -dmenu -p "Choose effect" -i -config ~/.config/rofi/config-wallpaper-effect.rasi)
+    choice=$(printf "%s\n" "${options[@]}" | LC_COLLATE=C sort | rofi -dmenu -i -config ~/.config/rofi/config-wallpaper-effect.rasi)
 
     # Process user choice
     if [[ -n "$choice" ]]; then
@@ -98,3 +101,26 @@ if pidof rofi > /dev/null; then
 fi
 
 main
+
+sleep 5 # add delay of 5 secords for those who have slow machines
+# supports sddm sequoia_2 theme only
+sddm_sequoia="/usr/share/sddm/themes/sequoia_2"
+if [ -d "$sddm_sequoia" ]; then
+    notify-send -i "$iDIRi/picture.png" "Set wallpaper" "as SDDM background?" \
+        -t 10000 \
+        -A "yes=Yes" \
+        -A "no=No" \
+        -h string:x-canonical-private-synchronous:wallpaper-notify
+
+    dbus-monitor "interface='org.freedesktop.Notifications',member='ActionInvoked'" |
+    while read -r line; do
+        if echo "$line" | grep -q "yes"; then
+            # User chose "Yes", copy the wallpaper with correct syntax
+            pkexec /usr/bin/cp -r "$HOME/.config/hypr/wallpaper_effects/.wallpaper_modified" "$sddm_sequoia/backgrounds/default"
+            notify-send -i "$iDIRi/picture.png" "SDDM" "Background SET"
+            break
+        elif echo "$line" | grep -q "no"; then
+            break
+        fi
+    done &
+fi
