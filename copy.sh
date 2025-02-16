@@ -8,18 +8,6 @@ waybar_style="$HOME/.config/waybar/style/[Extra] Modern-Combined - Transparent.c
 waybar_config="$HOME/.config/waybar/configs/[TOP] Default"
 waybar_config_laptop="$HOME/.config/waybar/configs/[TOP] Default Laptop" 
 
-# Check if running as root. If root, script will exit
-if [[ $EUID -eq 0 ]]; then
-    echo "This script should not be executed as root! Exiting......."
-    exit 1
-fi
-
-printf "\n%.0s" {1..2}  
-echo '  ╦╔═┌─┐┌─┐╦    ╦ ╦┬ ┬┌─┐┬─┐┬  ┌─┐┌┐┌┌┬┐  ╔╦╗┌─┐┌┬┐┌─┐ '
-echo '  ╠╩╗│ ││ │║    ╠═╣└┬┘├─┘├┬┘│  ├─┤│││ ││───║║│ │ │ └─┐ '
-echo '  ╩ ╩└─┘└─┘╩═╝  ╩ ╩ ┴ ┴  ┴└─┴─┘┴ ┴┘└┘─┴┘  ═╩╝└─┘ ┴ └─┘ '
-printf "\n%.0s" {1..2} 
- 
 # Set some colors for output messages
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
 ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
@@ -35,6 +23,27 @@ GREEN="$(tput setaf 2)"
 BLUE="$(tput setaf 4)"
 SKY_BLUE="$(tput setaf 6)"
 RESET="$(tput sgr0)"
+
+# Check if running as root. If root, script will exit
+if [[ $EUID -eq 0 ]]; then
+    echo "This script should not be executed as root! Exiting......."
+    exit 1
+fi
+
+printf "\n%.0s" {1..1}  
+echo -e "\e[35m
+    ╦╔═┌─┐┌─┐╦    ╔╦╗┌─┐┌┬┐┌─┐
+    ╠╩╗│ ││ │║     ║║│ │ │ └─┐ 2025
+    ╩ ╩└─┘└─┘╩═╝  ═╩╝└─┘ ┴ └─┘
+\e[0m"
+printf "\n%.0s" {1..1}  
+ 
+####### Announcement
+echo "${WARNING}      		A T T E N T I O N !${RESET}"
+echo "${SKY_BLUE}KooL Hyprland v2.3.11 have some Minor Keybinds changes!${RESET}"
+echo "${YELLOW}SUPER H for Keyhints and/or SUPER SHIFT K to search for Keybinds ${RESET}"
+echo "${MAGENTA}	   Once Logged in to Kool Hyprland! ${RESET}"
+printf "\n%.0s" {1..1}
 
 # Create Directory for Copy Logs
 if [ ! -d Copy-Logs ]; then
@@ -52,6 +61,7 @@ LOG="Copy-Logs/install-$(date +%d-%H%M%S)_dotfiles.log"
 # update home folders
 xdg-user-dirs-update 2>&1 | tee -a "$LOG" || true
 
+# note for Ja: This is mostly for Debian-Ubuntu (older Hyprland version)
 # setting up for nvidia
 if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
   echo "${INFO} Nvidia GPU detected. Setting up proper env's and configs" 2>&1 | tee -a "$LOG" || true
@@ -88,7 +98,7 @@ if command -v dpkg &> /dev/null; then
   # disabling pyprland as causing issues
   sed -i '/^exec-once = pypr &/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
 fi
-
+# End of Note for Ja:
 
 # Function to detect keyboard layout using localectl or setxkbmap
 detect_layout() {
@@ -143,7 +153,7 @@ ${MAGENTA} NOTE:${RESET}
   done
 fi
 
-printf "${NOTE} Detecting keyboard layout to prepare proper Hyprland Settings\n\n"
+printf "${NOTE} Detecting keyboard layout to prepare proper Hyprland Settings\n"
 
 # Prompt the user to confirm whether the detected layout is correct
 while true; do
@@ -191,8 +201,6 @@ ${MAGENTA} NOTE:${RESET}
         echo "${ERROR} Please enter either 'y' or 'n'." ;;
   esac
 done
-
-printf "\n%.0s" {1..1}
 
 # Check if asusctl is installed and add rog-control-center on Startup
 if command -v asusctl >/dev/null 2>&1; then
@@ -250,16 +258,19 @@ fi
 
 printf "\n"
 
-# Action to do for better rofi and kitty appearance
+# Action to do for better appearance
 while true; do
-  echo "$MAGENTA Select monitor resolution to properly configure appearance and fonts:"
-  echo "$YELLOW   -- Enter 1. for monitor res 1440p or less (< 1440p)"
-  echo "$YELLOW   -- Enter 2. for monitors res higher than 1440p (≥ 1440p)"
+  echo "${NOTE} ${SKY_BLUE} By default, KooL's Dots are configured for 1440p!"
+  echo "${WARN} If you dont select proper resolution, Hyprlock will look FUNKY!"
+  echo "${INFO} If you are not sure what is your resolution, choose 1 here!"
+  echo "${MAGENTA}Select monitor resolution to properly configure appearance and fonts:"
+  echo "$YELLOW  -- Enter 1. for monitor resolution 1200p or less (< 1200p)"
+  echo "$YELLOW  -- Enter 2. for monitor resolution higher than 1440p (≥ 1440p)"
   read -p "$CAT Enter the number of your choice (1 or 2): " res_choice
 
   case $res_choice in
     1)
-        resolution="< 1440p"
+        resolution="< 1200p"
         break
         ;;
     2)
@@ -307,7 +318,7 @@ printf "\n%.0s" {1..1}
 
 # Ask whether to change to 12hr format
 while true; do
-    echo -e "$MAGENTA By default, KooL's Dots are configured in 24H clock format."
+    echo -e "${NOTE} ${SKY_BLUE} By default, KooL's Dots are configured in 24H clock format."
     read -p "$CAT Do you want to change to 12H format or AM/PM format? (y/n): " answer
 
     # Convert the answer to lowercase for comparison
@@ -378,8 +389,7 @@ while true; do
       fi
 
     break
- 
-
+     
     elif [[ "$answer" == "n" ]]; then
         echo "${NOTE} You chose not to change to 12H format." 2>&1 | tee -a "$LOG"
         break  # Exit the loop if the user chooses "n"
@@ -387,13 +397,11 @@ while true; do
         echo "${ERROR} Invalid choice. Please enter y for yes or n for no."
     fi
 done
-
-
-printf "\n"
+printf "\n%.0s" {1..1}
 
 # Check if the user wants to disable Rainbow borders
-printf "${MAGENTA} By default, Rainbow Borders animation is enabled.\n"
-printf "${WARN} - However, this uses a bit more CPU and Memory resources.\n"
+echo "${NOTE} ${SKY_BLUE}By default, Rainbow Borders animation is enabled"
+echo "${WARN} However, this uses a bit more CPU and Memory resources."
 
 read -p "${CAT} Do you want to disable Rainbow Borders animation? (y/N): " border_choice
 if [[ "$border_choice" =~ ^[Yy]$ ]]; then
@@ -406,7 +414,7 @@ if [[ "$border_choice" =~ ^[Yy]$ ]]; then
 else
     echo "${NOTE} No changes made. Rainbow borders remain enabled." 2>&1 | tee -a "$LOG"
 fi
-printf "\n"
+printf "\n%.0s" {1..1}
 
 set -e
 
@@ -423,7 +431,7 @@ if [ ! -d "$HOME/.config" ]; then
   exit 1
 fi
 
-printf "${INFO} - copying dotfiles ${BLUE}first${RESET} part\n"
+printf "${INFO} - copying dotfiles ${SKY_BLUE}first${RESET} part\n"
 # Config directories which will ask the user whether to replace or not
 DIRS="
   ags 
@@ -482,10 +490,9 @@ for DIR2 in $DIRS; do
     fi
   fi
 done
-
 printf "\n%.0s" {1..1}
 
-printf "${INFO} - Copying dotfiles ${BLUE}second${RESET} part\n"
+printf "${INFO} - Copying dotfiles ${SKY_BLUE}second${RESET} part\n"
 
 # Check if the config directory exists
 if [ ! -d "config" ]; then
@@ -537,7 +544,7 @@ for DIR_NAME in $DIR; do
   fi
 done
 
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..1}
 
 # Restoring UserConfigs and UserScripts
 DIRH="hypr"
@@ -588,7 +595,7 @@ if [ -d "$BACKUP_DIR_PATH" ]; then
   done
 fi
 
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..1}
 
 # Restoring previous UserScripts
 DIRSH="hypr"
@@ -677,7 +684,7 @@ rm -rf "$HOME/.config/waybar/configs/[TOP] Default$config_remove" \
        "$HOME/.config/waybar/configs/[TOP] Default$config_remove (old v3)" \
        "$HOME/.config/waybar/configs/[TOP] Default$config_remove (old v4)" 2>&1 | tee -a "$LOG" || true
 
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..1}
 
 # for SDDM (sequoia_2)
 sddm_sequioa="/usr/share/sddm/themes/sequoia_2"
@@ -802,15 +809,15 @@ cleanup_backups
 # symlinks for waybar style
 ln -sf "$waybar_style" "$HOME/.config/waybar/style.css" && \
 
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..1}
 
 # initialize wallust to avoid config error on hyprland
 wallust run -s $wallpaper 2>&1 | tee -a "$LOG"
 
 printf "\n%.0s" {1..2}
 printf "${OK} GREAT! KooL's Hyprland-Dots is now Loaded & Ready !!! "
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..1}
 printf "${INFO} However, it is ${MAGENTA}HIGHLY SUGGESTED${RESET} to logout and re-login or better reboot to avoid any issues"
-printf "\n%.0s" {1..2}
+printf "\n%.0s" {1..1}
 printf "${SKY_BLUE}Thank you${RESET} for using ${MAGENTA}KooL's Hyprland Configuration${RESET}... ${YELLOW}ENJOY!!!${RESET}"
 printf "\n%.0s" {1..3}
