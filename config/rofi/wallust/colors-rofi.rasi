@@ -1,28 +1,50 @@
+ /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  
+ /* wallust template - colors-rofi */
+
 * {
-active-background: #101C2F;
-active-foreground: #D6CBD5;
-normal-background: #030508;
-normal-foreground: #D6CBD5;
-urgent-background: #2B7F48;
-urgent-foreground: #D6CBD5;
+active-background: #718A90;
+active-foreground: #ABF1E1;
+normal-background: #212826;
+normal-foreground: #ABF1E1;
+urgent-background: #44AE9B;
+urgent-foreground: #ABF1E1;
 
-alternate-active-background: #11606B;
-alternate-active-foreground: #D6CBD5;
-alternate-normal-background: #030508;
-alternate-normal-foreground: #D6CBD5;
-alternate-urgent-background: #030508;
-alternate-urgent-foreground: #D6CBD5;
+alternate-active-background: #78858E;
+alternate-active-foreground: #ABF1E1;
+alternate-normal-background: #212826;
+alternate-normal-foreground: #ABF1E1;
+alternate-urgent-background: #212826;
+alternate-urgent-foreground: #ABF1E1;
 
-selected-active-background: #101C2F;
-selected-active-foreground: #D6CBD5;
-selected-normal-background: #BCADBB;
-selected-normal-foreground: #D6CBD5;
-selected-urgent-background: #2B7F48;
-selected-urgent-foreground: #D6CBD5;
+selected-active-background: #44AE9B;
+selected-active-foreground: #ABF1E1;
+selected-normal-background: #44AE9B;
+selected-normal-foreground: #ABF1E1;
+selected-urgent-background: #718A90;
+selected-urgent-foreground: #ABF1E1;
 
-background-color: #030508;
+background-color: #212826;
 background: rgba(0,0,0,0.7);
-foreground: #BCADBB;
-border-color: #101C2F;
+foreground: #ABF1E1;
+border-color: #718A90;
+
+color0: #464D4C;
+color1: #02211D;
+color2: #02613F;
+color3: #5A646A;
+color4: #55686C;
+color5: #338375;
+color6: #0CA27F;
+color7: #7FE3CC;
+color8: #599F8E;
+color9: #022C27;
+color10: #028154;
+color11: #78858E;
+color12: #718A90;
+color13: #44AE9B;
+color14: #10D8A9;
+color15: #7FE3CC;
+
+
 }
 
