@@ -3,11 +3,17 @@
 # This script for selecting wallpapers (SUPER W)
 
 # WALLPAPERS PATH
+terminal=kitty
 wallDIR="$HOME/Pictures/wallpapers"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
-iDIR="$HOME/.config/swaync/icons"
+wallpaper_current="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
+
+# Directory for swaync
+iDIR="$HOME/.config/swaync/images"
+iDIRi="$HOME/.config/swaync/icons"
 
 # variables
+rofi_theme="~/.config/rofi/config-wallpaper.rasi"
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 # swww transition config
 FPS=30
@@ -22,13 +28,13 @@ if pidof swaybg > /dev/null; then
 fi
 
 # Retrieve image files using null delimiter to handle spaces in filenames
-mapfile -d '' PICS < <(find "${wallDIR}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.pnm" -o -iname "*.tga" -o -iname "*.tiff" -o -iname "*.webp" -o -iname "*.bmp" -o -iname "*.farbfeld" -o -iname "*.png" -o -iname "*.gif" \) -print0)
+mapfile -d '' PICS < <(find -L "${wallDIR}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.pnm" -o -iname "*.tga" -o -iname "*.tiff" -o -iname "*.webp" -o -iname "*.bmp" -o -iname "*.farbfeld" -o -iname "*.png" -o -iname "*.gif" \) -print0)
 
 RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
 RANDOM_PIC_NAME=". random"
 
 # Rofi command
-rofi_command="rofi -i -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+rofi_command="rofi -i -show -dmenu -config $rofi_theme"
 
 # Sorting Wallpapers
 menu() {
@@ -93,6 +99,7 @@ main() {
     echo "Image not found."
     exit 1
   fi
+
 }
 
 # Check if rofi is already running
@@ -109,25 +116,31 @@ wait $!
 sleep 2
 "$SCRIPTSDIR/Refresh.sh"
 
-sleep 5 # add delay of 5 secords for those who have slow machines
-sddm_sequoia="/usr/share/sddm/themes/sequoia_2"
-if [ -d "$sddm_sequoia" ]; then
-    notify-send -i "$iDIR/picture.png" "Set wallpaper" "as SDDM background?" \
-        -t 10000 \
-        -A "yes=Yes" \
-        -A "no=No" \
-        -h string:x-canonical-private-synchronous:wallpaper-notify
+sleep 1
+# Check if user selected a wallpaper
+if [[ -n "$choice" ]]; then
+    sddm_sequoia="/usr/share/sddm/themes/sequoia_2"
+    if [ -d "$sddm_sequoia" ]; then
+        notify-send -i "$iDIR/ja.png" "Set wallpaper" "as SDDM background?" \
+            -t 10000 \
+            -A "yes=Yes" \
+            -A "no=No" \
+            -h string:x-canonical-private-synchronous:wallpaper-notify
 
-    # Wait for user input using a background process
-    dbus-monitor "interface='org.freedesktop.Notifications',member='ActionInvoked'" |
-    while read -r line; do
-        if echo "$line" | grep -q "yes"; then
-            # User chose "Yes", copy the wallpaper with correct syntax
-            pkexec /usr/bin/cp -r "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current" "$sddm_sequoia/backgrounds/default"
-            notify-send -i "$iDIR/picture.png" "SDDM" "Background SET"
+        # Wait for user input using dbus-monitor
+        dbus-monitor "interface='org.freedesktop.Notifications',member='ActionInvoked'" |
+        while read -r line; do
+          if echo "$line" | grep -q "yes"; then
+            $terminal -e bash -c "echo 'Enter your password to set wallpaper as SDDM Background'; \
+            sudo cp -r $wallpaper_current '$sddm_sequoia/backgrounds/default' && \
+            notify-send -i '$iDIR/ja.png' 'SDDM' 'Background SET'"
             break
-        elif echo "$line" | grep -q "no"; then
+          elif echo "$line" | grep -q "no"; then
+            echo "Wallpaper not set as SDDM background. Exiting."
             break
-        fi
-    done &
+          fi
+        done &
+    fi
 fi
+
+

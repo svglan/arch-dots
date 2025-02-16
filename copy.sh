@@ -1,5 +1,6 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# Deb-Untu Branch
 
 clear
 wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_current
@@ -271,18 +272,33 @@ echo "${OK} You have chosen $resolution resolution." 2>&1 | tee -a "$LOG"
 
 # Add your commands based on the resolution choice
 if [ "$resolution" == "< 1440p" ]; then
-  cp -r config/rofi/resolution/1080p/* config/rofi/
+  #cp -r config/rofi/resolution/1080p/* config/rofi/ 10-Feb-2025
   sed -i 's/font_size 16.0/font_size 12.0/' config/kitty/kitty.conf
 
   # hyprlock matters
   mv config/hypr/hyprlock.conf config/hypr/hyprlock-2k.conf &&
   mv config/hypr/hyprlock-1080p.conf config/hypr/hyprlock.conf
 
-elif [ "$resolution" == "≥ 1440p" ]; then
-  cp -r config/rofi/resolution/1440p/* config/rofi/
+  # rofi fonts reduction
+  themes_dir="config/rofi/themes"
+  config_file="config/rofi/config.rasi"
+
+  # Change rofi font size
+  find "$themes_dir" -type f | while read -r file; do
+      if grep -Pzoq 'element-text {\n  font: "JetBrainsMono Nerd Font SemiBold 12";\n}' "$file"; then
+          sed -i 's/font: "JetBrainsMono Nerd Font SemiBold 12"/font: "JetBrainsMono Nerd Font SemiBold 11"/' "$file"
+      fi
+  done
+
+  # Change rofi font size in ~/.config/rofi/config.rasi
+  if [ -f "$config_file" ]; then
+      if grep -Pzoq 'configuration {\n  font: "JetBrainsMono Nerd Font SemiBold 13";\n}' "$config_file"; then
+          sed -i 's/font: "JetBrainsMono Nerd Font SemiBold 13"/font: "JetBrainsMono Nerd Font SemiBold 12"/' "$config_file"
+      fi
+  fi
 fi
 
-printf "\n"
+printf "\n%.0s" {1..1}
 
 # Ask whether to change to 12hr format
 while true; do
@@ -602,7 +618,26 @@ if [ -d "$BACKUP_DIR_PATH" ]; then
   done
 fi
 
-printf "\n%.0s" {1..}
+printf "\n%.0s" {1..1}
+
+# Define the target directory for rofi themes
+rofi_DIR="$HOME/.local/share/rofi/themes"
+
+if [ ! -d "$rofi_DIR" ]; then
+  mkdir -p "$rofi_DIR"
+fi
+if [ -d "$HOME/.config/rofi/themes" ]; then
+  if [ -z "$(ls -A $HOME/.config/rofi/themes)" ]; then
+    echo '/* Dummy Rofi theme */' > "$HOME/.config/rofi/themes/dummy.rasi"
+  fi
+  ln -snf ~/.config/rofi/themes/* ~/.local/share/rofi/themes/
+  # Delete the dummy file if it was created
+  if [ -f "$HOME/.config/rofi/themes/dummy.rasi" ]; then
+    rm "$HOME/.config/rofi/themes/dummy.rasi"
+  fi
+fi
+
+printf "\n%.0s" {1..1}
 
 # wallpaper stuff
 mkdir -p ~/Pictures/wallpapers
