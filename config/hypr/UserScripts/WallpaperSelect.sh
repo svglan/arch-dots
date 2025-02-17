@@ -16,7 +16,7 @@ iDIRi="$HOME/.config/swaync/icons"
 rofi_theme="~/.config/rofi/config-wallpaper.rasi"
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 # swww transition config
-FPS=30
+FPS=30  
 TYPE="any"
 DURATION=1
 BEZIER=".43,1.19,1,.4"
