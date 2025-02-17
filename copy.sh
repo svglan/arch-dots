@@ -266,7 +266,7 @@ while true; do
 
   case $res_choice in
     1)
-        resolution="< 1200p"
+        resolution="< 1440p"
         break
         ;;
     2)
