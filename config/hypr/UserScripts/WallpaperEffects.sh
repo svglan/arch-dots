@@ -7,7 +7,7 @@ terminal=kitty
 wallpaper_current="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 wallpaper_output="$HOME/.config/hypr/wallpaper_effects/.wallpaper_modified"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
-focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+focused_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
 rofi_theme="~/.config/rofi/config-wallpaper-effect.rasi"
 
 # Directory for swaync
@@ -42,6 +42,7 @@ declare -A effects=(
     ["Vignette-black"]="convert $current_wallpaper -background black -vignette 0x3 $wallpaper_output"
     ["Zoomed"]="convert $current_wallpaper -gravity Center -extent 1:1 $wallpaper_output"
 )
+
 # Function to apply no effects
 no-effects() {
     swww img -o "$focused_monitor" "$wallpaper_current" $SWWW_PARAMS &&
@@ -99,7 +100,7 @@ fi
 
 main
 
-sleep 3
+sleep 1
 # Check if user selected a wallpaper
 if [[ -n "$choice" ]]; then
     sddm_sequoia="/usr/share/sddm/themes/sequoia_2"
