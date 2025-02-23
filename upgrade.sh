@@ -1,11 +1,14 @@
 #!/bin/bash
-### https://github.com/JaKooLit/JaKooLit
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# for Semi-Manual upgrading your system.
+# NOTE: requires rsync 
+
 
 # Set some colors for output messages
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
 ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
 NOTE="$(tput setaf 3)[NOTE]$(tput sgr0)"
-WARN="$(tput setaf 166)[WARN]$(tput sgr0)"
+WARN="$(tput setaf 1)[WARN]$(tput sgr0)"
 CAT="$(tput setaf 6)[ACTION]$(tput sgr0)"
 MAGENTA=$(tput setaf 5)
 WARNING=$(tput setaf 1)
@@ -18,7 +21,7 @@ if [ ! -d Upgrade-Logs ]; then
     mkdir Upgrade-Logs
 fi
 
-LOG="Upgrade-Logs/upgrade-$(date +%d-%H%M%S)_dotfiles.log"
+LOG="Upgrade-Logs/upgrade-$(date +%d-%H%M%S)_upgrade_dotfiles.log"
 
 # source and target versions
 source_dir="config"
@@ -138,11 +141,11 @@ if version_gt "$latest_version" "$stored_version"; then
 		printf "\n%.0s" {1..2}
         echo "$NOTE Files or Folders updated successfully to version $latest_version" 2>&1 | tee -a "$LOG"
 
-		# Set some files as executable
-		chmod +x ~/.config/hypr/scripts/* 2>&1 | tee -a "$LOG"
-		chmod +x ~/.config/hypr/UserScripts/* 2>&1 | tee -a "$LOG"
-		chmod +x ~/.config/hypr/initial-boot.sh 2>&1 | tee -a "$LOG"
-		
+        # Set some files as executable
+        chmod +x "$HOME/.config/hypr/scripts/"* 2>&1 | tee -a "$LOG"
+        chmod +x "$HOME/.config/hypr/UserScripts/"* 2>&1 | tee -a "$LOG"
+        # Set executable for initial-boot.sh
+        chmod +x "$HOME/.config/hypr/initial-boot.sh" 2>&1 | tee -a "$LOG"		
     else
         echo "$MAGENTA Upgrade declined. No files or folders changed" 2>&1 | tee -a "$LOG"
     fi
