@@ -1,6 +1,6 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Rofi menu for Quick Edit/View of Settings (SUPER SHIFT E)
+# Rofi menu for KooL Quick Edit/View of Settings (SUPER SHIFT E)
 
 # Define preferred text editor and terminal
 edit=${EDITOR:-nano}
@@ -27,8 +27,8 @@ view/edit Decorations
 view/edit Animations
 view/edit Laptop Keybinds
 view/edit Default Keybinds
-Configure Monitors
-Configure Workspace Rules
+Configure Monitors (nwg-displays)
+Configure Workspace Rules (nwg-displays)
 Choose Hyprland Animations
 Choose Monitor Profiles
 Choose Rofi Themes
@@ -51,8 +51,18 @@ main() {
         "view/edit Animations") file="$UserConfigs/UserAnimations.conf" ;;
         "view/edit Laptop Keybinds") file="$UserConfigs/Laptops.conf" ;;
         "view/edit Default Keybinds") file="$configs/Keybinds.conf" ;;
-        "Configure Monitors") file="$HOME/.config/hypr/monitors.conf"  ;;
-        "Configure Workspace Rules ") file="$HOME/.config/hypr/workspaces.conf" ;;
+        "Configure Monitors (nwg-displays)") 
+            if ! command -v nwg-displays &>/dev/null; then
+                notify-send -i "$iDIR/ja.png" "Missing nwg-displays" "Install nwg-displays first"
+                exit 1
+            fi
+            nwg-displays ;;
+        "Configure Workspace Rules (nwg-displays)") 
+            if ! command -v nwg-displays &>/dev/null; then
+                notify-send -i "$iDIR/ja.png" "Missing nwg-displays" "Install nwg-displays first"
+                exit 1
+            fi
+            nwg-displays ;;
         "Choose Hyprland Animations") $scriptsDir/Animations.sh ;;
         "Choose Monitor Profiles") $scriptsDir/MonitorProfiles.sh ;;
         "Choose Rofi Themes") $scriptsDir/RofiThemeSelector.sh ;;
