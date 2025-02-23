@@ -5,8 +5,8 @@
 # Variables
 mDIR="$HOME/Music/"
 iDIR="$HOME/.config/swaync/icons"
-rofi_theme="~/.config/rofi/config-rofi-Beats.rasi"
-rofi_theme_1="~/.config/rofi/config-rofi-Beats-menu.rasi"
+rofi_theme="$HOME/.config/rofi/config-rofi-Beats.rasi"
+rofi_theme_1="$HOME/.config/rofi/config-rofi-Beats-menu.rasi"
 
 # Online Stations. Edit as required
 declare -A online_music=(
@@ -79,7 +79,9 @@ shuffle_local_music() {
 
 # Main function for playing online music
 play_online_music() {
-  choice=$(printf "%s\n" "${!online_music[@]}" | rofi -i -dmenu -config $rofi_theme)
+  choice=$(for online in "${!online_music[@]}"; do
+      echo "$online"
+    done | sort | rofi -i -dmenu -config "$rofi_theme")
 
   if [ -z "$choice" ]; then
     exit 1
