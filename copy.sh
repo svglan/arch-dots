@@ -64,6 +64,7 @@ LOG="Copy-Logs/install-$(date +%d-%H%M%S)_dotfiles.log"
 # update home folders
 xdg-user-dirs-update 2>&1 | tee -a "$LOG" || true
 
+# ##########################################################################
 # note for Ja: This is mostly for Debian-Ubuntu (older Hyprland version)
 # setting up for nvidia
 if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
@@ -102,6 +103,7 @@ if command -v dpkg &> /dev/null; then
   sed -i '/^exec-once = pypr &/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 # End of Note for Ja:
+# ##########################################################################
 
 printf "\n%.0s" {1..1} 
 
