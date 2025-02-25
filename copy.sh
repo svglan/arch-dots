@@ -561,6 +561,12 @@ if [ -d "$DIRPATHw" ]; then
                     fi
                 done || true
 
+                # Step 4: restore Modules_Extras
+                BACKUP_FILEw="$DIRPATHw-backup-$BACKUP_DIR/Modules_Extras"
+                if [ -f "$BACKUP_FILEw" ]; then
+                  cp -f "$BACKUP_FILEw" "$DIRPATHw/Modules_Extras"
+                fi
+
                 break
                 ;;
             [Nn]* )
