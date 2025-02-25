@@ -1,5 +1,6 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# Ubuntu 24.04 Branch
 
 clear
 wallpaper=$HOME/.config/hypr/wallpaper_effects/.wallpaper_current
@@ -36,24 +37,6 @@ print_color() {
     printf "%b%s%b\n" "$1" "$2" "$CLEAR"
 }
 
-# Check /etc/os-release to see if this is an Ubuntu or Debian based distro
-if grep -iq '^\(ID_LIKE\|ID\)=.*\(debian\|ubuntu\)' /etc/os-release >/dev/null 2>&1; then
-	printf "\n%.0s" {1..1}
-    print_color $WARNING "
-    █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-                 KOOL DOTS version INCOMPATIBLE
-    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
-
-    Debian / Ubuntu detected. Refer to Hyprland-Dots README
-    For instruction on how to update your KooL Hyprland Dots
-
-    exiting ....
-    "
-  printf "\n%.0s" {1..3}
-  exit 1
-fi
-
-
 printf "\n%.0s" {1..1}  
 echo -e "\e[35m
     ╦╔═┌─┐┌─┐╦    ╔╦╗┌─┐┌┬┐┌─┐
@@ -86,49 +69,32 @@ LOG="Copy-Logs/install-$(date +%d-%H%M%S)_dotfiles.log"
 # update home folders
 xdg-user-dirs-update 2>&1 | tee -a "$LOG" || true
 
+# ##########################################################################
+# NOTES for Ja: This is mostly for Ubuntu 24.04. Care when changing
 # setting up for nvidia
 if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
   echo "${INFO} Nvidia GPU detected. Setting up proper env's and configs" 2>&1 | tee -a "$LOG" || true
+  sed -i '/env = WLR_NO_HARDWARE_CURSORS,1/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = LIBVA_DRIVER_NAME,nvidia/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = __GLX_VENDOR_LIBRARY_NAME,nvidia/s/^#//' config/hypr/UserConfigs/ENVariables.conf
-  sed -i '/env = NVD_BACKEND,direct/s/^#//' config/hypr/UserConfigs/ENVariables.conf
-  # enabling no hardware cursors if nvidia detected
-  sed -i 's/^\([[:space:]]*no_hardware_cursors[[:space:]]*=[[:space:]]*\)false/\1true/' config/hypr/UserConfigs/UserSettings.conf  
-  # disabling explicit sync for nvidia for now (Hyprland 0.42.0)
-  #sed -i 's/  explicit_sync = 2/  explicit_sync = 0/' config/hypr/UserConfigs/UserSettings.conf
 fi
 
 # uncommenting WLR_RENDERER_ALLOW_SOFTWARE,1 if running in a VM is detected
 if hostnamectl | grep -q 'Chassis: vm'; then
   echo "${INFO} System is running in a virtual machine. Setting up proper env's and configs" 2>&1 | tee -a "$LOG" || true
-  # enabling proper ENV's for Virtual Environment which should help
-  sed -i 's/^\([[:space:]]*no_hardware_cursors[[:space:]]*=[[:space:]]*\)false/\1true/' config/hypr/UserConfigs/UserSettings.conf
+  sed -i '/env = WLR_NO_HARDWARE_CURSORS,1/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = WLR_RENDERER_ALLOW_SOFTWARE,1/s/^#//' config/hypr/UserConfigs/ENVariables.conf
-  #sed -i '/env = LIBGL_ALWAYS_SOFTWARE,1/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/monitor = Virtual-1, 1920x1080@60,auto,1/s/^#//' config/hypr/monitors.conf
 fi
 
-# Proper Polkit for NixOS
-if hostnamectl | grep -q 'Operating System: NixOS'; then
-  echo "${INFO} NixOS Distro Detected. Setting up proper env's and configs." 2>&1 | tee -a "$LOG" || true
-  sed -i -E '/^#?exec-once = \$scriptsDir\/Polkit-NixOS\.sh/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
-  sed -i '/^exec-once = \$scriptsDir\/Polkit\.sh$/ s/^#*/#/' config/hypr/UserConfigs/Startup_Apps.conf
-fi
-
-# to check if Debian or Ubuntu or based distros
-if grep -iq '^\(ID_LIKE\|ID\)=.*\(debian\|ubuntu\)' /etc/os-release >/dev/null 2>&1; then
+# Check if dpkg is installed (use to check if Debian or Ubuntu or based distros
+if command -v dpkg &> /dev/null; then
 	echo "${INFO} Debian/Ubuntu based distro. Disabling pyprland since it does not work properly" 2>&1 | tee -a "$LOG" || true
   # disabling pyprland as causing issues
   sed -i '/^exec-once = pypr &/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
 fi
-
-# activating hyprcursor on env by checking if the directory ~/.icons/Bibata-Modern-Ice/hyprcursors exists
-if [ -d "$HOME/.icons/Bibata-Modern-Ice/hyprcursors" ]; then
-    HYPRCURSOR_ENV_FILE="config/hypr/UserConfigs/ENVariables.conf"
-    echo "${INFO} Bibata-Hyprcursor directory detected. Activating Hyprcursor...." 2>&1 | tee -a "$LOG" || true
-    sed -i 's/^#env = HYPRCURSOR_THEME,Bibata-Modern-Ice/env = HYPRCURSOR_THEME,Bibata-Modern-Ice/' "$HYPRCURSOR_ENV_FILE"
-    sed -i 's/^#env = HYPRCURSOR_SIZE,24/env = HYPRCURSOR_SIZE,24/' "$HYPRCURSOR_ENV_FILE"
-fi
+# End of Note for Ja:
+# ##########################################################################
 
 printf "\n%.0s" {1..1} 
 
@@ -956,9 +922,8 @@ cleanup_backups() {
 	  
       # If more than one backup found
       if [ ${#BACKUP_DIRS[@]} -gt 1 ]; then
-		printf "\n\n ${INFO} Performing clean up for ${YELLOW}${DIR##*/}${RESET}\n"
-
-        echo -e "${NOTE} Found multiple backups for: ${YELLOW}${DIR##*/}${RESET}"
+      	printf "\n%.0s" {1..2}
+        echo -e "${INFO} Found ${MAGENTA}multiple backups${RESET} for: ${YELLOW}${DIR##*/}${RESET}"
         echo "${YELLOW}Backups: ${RESET}"
 
         # List the backups
