@@ -91,7 +91,7 @@ fi
 if command -v dpkg &> /dev/null; then
 	echo "${INFO} Debian/Ubuntu based distro. Disabling pyprland since it does not work properly" 2>&1 | tee -a "$LOG" || true
   # disabling pyprland as causing issues
-  sed -i '/^exec-once = pypr &/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
+  sed -i '/^\s*exec-once = pypr &\s*/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 # End of Note for Ja:
 # ##########################################################################
@@ -202,17 +202,17 @@ done
 
 # Check if asusctl is installed and add rog-control-center on Startup
 if command -v asusctl >/dev/null 2>&1; then
-    sed -i '/exec-once = rog-control-center &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+    sed -i '/^\s*#exec-once = rog-control-center/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 
 # Check if blueman-applet is installed and add blueman-applet on Startup
 if command -v blueman-applet >/dev/null 2>&1; then
-    sed -i '/exec-once = blueman-applet &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+    sed -i '/^\s*#exec-once = blueman-applet/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
 fi
 
 # Check if ags is installed edit ags behaviour on configs
 if command -v ags >/dev/null 2>&1; then
-    sed -i '/#exec-once = ags &/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
+    sed -i '/^\s*#exec-once = ags/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
     sed -i '/#ags -q && ags &/s/^#//' config/hypr/scripts/RefreshNoWaybar.sh
     sed -i '/#ags -q && ags &/s/^#//' config/hypr/scripts/Refresh.sh
 fi
@@ -398,7 +398,7 @@ read -p "${CAT} Do you want to disable Rainbow Borders animation? (y/N): " borde
 if [[ "$border_choice" =~ ^[Yy]$ ]]; then
     mv config/hypr/UserScripts/RainbowBorders.sh config/hypr/UserScripts/RainbowBorders.bak.sh
     
-    sed -i '/exec-once = \$UserScripts\/RainbowBorders.sh \&/s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
+    sed -i '/exec-once = \$UserScripts\/RainbowBorders.sh/s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
     sed -i '/^[[:space:]]*animation = borderangle, 1, 180, liner, loop/s/^/#/' config/hypr/UserConfigs/UserAnimations.conf
     
     echo "${OK} Rainbow borders is now disabled." 2>&1 | tee -a "$LOG"
