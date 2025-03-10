@@ -152,11 +152,18 @@ chmod +x copy.sh
 
 - Subscribe to my Youtube Channel [YouTube](https://www.youtube.com/@Ja.KooLit) 
 
-- You can also buy me Coffee Through ko-fi.com or Coffee.com 🤩
+- you can also give support through coffee's or btc 😊
 
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'Q5Q3KHO7B');kofiwidget2.draw();</script> 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/jakoolit)
+
+or
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/JaKooLit)
+
+Or you can donate cryto on my btc wallet :)  
+> 1N3MeV2dsX6gQB42HXU6MF2hAix1mqjo8i
+
+![Bitcoin](https://github.com/user-attachments/assets/7ed32f8f-c499-46f0-a53c-3f6fbd343699)
 
 
                         
