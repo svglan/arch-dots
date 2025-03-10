@@ -148,7 +148,7 @@ chmod +x copy.sh
 
 - Subscribe to my Youtube Channel [YouTube](https://www.youtube.com/@Ja.KooLit) 
 
-- you can also give support through coffee or btc 😊
+- you can also give support through coffee's or btc 😊
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/jakoolit)
 
