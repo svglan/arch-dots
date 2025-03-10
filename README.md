@@ -1,6 +1,10 @@
 <h3 align="center">
-<img align="center" width="80%" src=https://github.com/JaKooLit/Hyprland-Dots/blob/37dd3126650a942f9a705bb927e9a5093ebda4fa/assets/latte.png />
+<img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
 </h3>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/assets/latte.png" width="400" />
+</p>
 
 <h3 align="center">
 
