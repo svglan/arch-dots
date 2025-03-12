@@ -33,32 +33,38 @@
 </div>
 
 <h3 align="center">
-  <img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
-  KooL's Hyprland Dotfiles Showcase 
-  <img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
+	<img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
+	KooL's Hyprland Dotfiles Showcase 
+	<img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
 </h3>
 
 <div align="center">
 
-https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-9913-76039e84a2cd
+https://github.com/user-attachments/assets/49bc12b2-abaf-45de-a21c-67aacd9bb872
 
 </div>
 
-
 #### 📹 A video walkthroughs
-<details>
-  <summary>YT Videos</summary>
+- at the bottom
 
-- [Walkthough](https://youtu.be/fO-RBHvVEcc)
-
-- [V1-Changes](https://youtu.be/upDl1ns05eg)
-
-- [v2-Changes](https://youtu.be/yaVurRoXc-s)
-
-#### 📽️ A video coverage by other users. Pls watch and subscribe to their channel
-- [`Link`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Videos_and_Reviews)
+#### 🎞️ AGS Overview DEMO
+- in case you wonder, here is a short demo of AGS overview [Youtube LINK](https://youtu.be/zY5SLNPBJTs)
 
 </details>
+
+## 🚩 🏁 Auto Distro-Hyprland install scripts cloning and starting 🇵🇭
+- NOTE: you need package `curl` for this to work
+
+```bash
+sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distro-Hyprland.sh)
+```
+- if you are using say fish or a non-POSIX compliant
+```bash
+curl -sL https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distro-Hyprland.sh | bash
+```
+
+- you can now use above command to automatically clone the Distro-Hyprland install scripts below
+- it will clone the install scripts and start the `install.sh` 😎
 
 ## Installation 
 ### 👁️‍🗨️ Kool's Hyprland install Scripts for Ubuntu 24.04 Hyprland install scripts   👁️‍🗨️
@@ -94,10 +100,14 @@ chmod +x copy.sh
 ./copy.sh
 ```
 
-## ⚠️⚠️⚠️ ATTENTION - BACKUPS CREATED by SCRIPT
+## ❗❗❗ DEBIAN AND UBUNTU HEADS UP!
+- I am getting ridiculously amount of messages for updating your KooL Hyprland dotfiles. I have made a BIG note on [`WIKI`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)
+
+
+#### ⚠️⚠️⚠️ ATTENTION - BACKUPS CREATED by SCRIPT
 > [!CAUTION]
 > copy.sh, release.sh and even upgrade.sh creates a backup!
-> Kindly investigate manually contents on your ~/.config
+> Kindly investigate manually contents on your $HOME/.config
 > Delete manually all the backups which you dont need
 
 #### 🛎️ a small note on wallpapers
@@ -122,9 +132,6 @@ chmod +x copy.sh
 - QUICK HINT! Click the HINT! Waybar module (note only available in Waybar default and Simple-L [TOP] layout). Can be launched by Keybind `SUPER H`
 - More question? click here browse through this [WIKI](https://github.com/JaKooLit/Hyprland-Dots/wiki/)
 - If you want the old configs, it is collected on my "Archive" repo. See [HERE](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)
-
-#### 🎞️ AGS Overview DEMO
-- in case you wonder, here is a short demo of AGS overview [Youtube LINK](https://www.youtube.com/watch?v=ir9NfMcZBzA)
 
 #### ⌨ Keybinds
 - Keybinds [`CLICK`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
@@ -172,4 +179,3 @@ Or you can donate cryto on my btc wallet :)
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=JaKooLit/Hyprland-Dots&type=Date" />
  </picture>
 </a>
-
