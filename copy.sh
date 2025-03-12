@@ -87,15 +87,8 @@ if hostnamectl | grep -q 'Chassis: vm'; then
   sed -i '/monitor = Virtual-1, 1920x1080@60,auto,1/s/^#//' config/hypr/monitors.conf
 fi
 
-# Check if dpkg is installed (use to check if Debian or Ubuntu or based distros
-if command -v dpkg &> /dev/null; then
-	echo "${INFO} Debian/Ubuntu based distro. Disabling pyprland since it does not work properly" 2>&1 | tee -a "$LOG" || true
-  # disabling pyprland as causing issues
-  sed -i '/^\s*exec-once = pypr &\s*/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
-fi
 # End of Note for Ja:
 # ##########################################################################
-
 printf "\n%.0s" {1..1} 
 
 # Function to detect keyboard layout using localectl or setxkbmap
@@ -650,7 +643,7 @@ if [ -d "$BACKUP_HYPR_PATH" ]; then
   done
 
   # Restore files automatically
-  FILE_B=("monitors.conf" "workspaces.conf" "pyprland.toml")
+  FILE_B=("monitors.conf" "workspaces.conf")
   for FILE_RESTORE in "${FILE_B[@]}"; do
     BACKUP_FILE="$BACKUP_HYPR_PATH/$FILE_RESTORE"
 
