@@ -89,19 +89,6 @@ if hostnamectl | grep -q 'Chassis: vm'; then
   sed -i '/monitor = Virtual-1, 1920x1080@60,auto,1/s/^#//' config/hypr/monitors.conf
 fi
 
-# Proper Polkit for NixOS
-if hostnamectl | grep -q 'Operating System: NixOS'; then
-  echo "${INFO} NixOS Distro Detected. Setting up properly. Setting up proper env's and configs" 2>&1 | tee -a "$LOG" || true
-  sed -i -E '/^#?exec-once = \$scriptsDir\/Polkit-NixOS\.sh/s/^#//' config/hypr/UserConfigs/Startup_Apps.conf
-  sed -i '/^exec-once = \$scriptsDir\/Polkit\.sh$/ s/^#*/#/' config/hypr/UserConfigs/Startup_Apps.conf
-fi
-
-# Check if dpkg is installed (use to check if Debian or Ubuntu or based distros
-if command -v dpkg &> /dev/null; then
-	echo "${INFO} Debian/Ubuntu based distro. Disabling pyprland since it does not work properly" 2>&1 | tee -a "$LOG" || true
-  # disabling pyprland as causing issues
-  sed -i '/^\s*exec-once = pypr &\s*/ s/^/#/' config/hypr/UserConfigs/Startup_Apps.conf
-fi
 # End of Note for Ja:
 # ##########################################################################
 
