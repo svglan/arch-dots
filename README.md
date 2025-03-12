@@ -41,25 +41,32 @@
 
 <div align="center">
 
-https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-9913-76039e84a2cd
+https://github.com/user-attachments/assets/49bc12b2-abaf-45de-a21c-67aacd9bb872
 
 </div>
 
 
 #### 📹 A video walkthroughs
-<details>
-  <summary>YT Videos</summary>
+- at the bottom
 
-- [Walkthough](https://youtu.be/fO-RBHvVEcc)
-
-- [V1-Changes](https://youtu.be/upDl1ns05eg)
-
-- [v2-Changes](https://youtu.be/yaVurRoXc-s)
-
-#### 📽️ A video coverage by other users. Pls watch and subscribe to their channel
-- [`Link`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Videos_and_Reviews)
+#### 🎞️ AGS Overview DEMO
+- in case you wonder, here is a short demo of AGS overview [Youtube LINK](https://youtu.be/zY5SLNPBJTs)
 
 </details>
+
+## 🚩 🏁 Auto Distro-Hyprland install scripts cloning and starting 🇵🇭
+- NOTE: you need package `curl` for this to work
+
+```bash
+sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distro-Hyprland.sh)
+```
+- if you are using say fish or a non-POSIX compliant
+```bash
+curl -sL https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distro-Hyprland.sh | bash
+```
+
+- you can now use above command to automatically clone the Distro-Hyprland install scripts below
+- it will clone the install scripts and start the `install.sh` 😎
 
 ## Installation 
 ### 👁️‍🗨️ Kool's Hyprland install Scripts for Debian and Ubuntu Hyprland install scripts   👁️‍🗨️
@@ -87,9 +94,9 @@ https://github.com/JaKooLit/Hyprland-Dots/assets/85185940/50d53755-0f11-45d6-991
 > The auto copy script "copy.sh" will create backups of intended folders to be copied. However, still a good idea to manually backup just incase script failed to backup!
 - clone this repo by using git. Change directory, make executable and run the script
 
-> to download from `Deb-Untu-old-v-Hyprland` branch
+> to download from `Deb-Untu-Dots` branch
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b Deb-Untu-old-v-Hyprland DebUntu-Hyprland-Dots
+git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b Deb-Untu-Dots DebUntu-Hyprland-Dots
 cd DebUntu-Hyprland-Dots
 ```
 - automatic copy/install of pre-configured dots
@@ -97,12 +104,6 @@ cd DebUntu-Hyprland-Dots
 chmod +x copy.sh
 ./copy.sh
 ```
-
-## ⚠️⚠️⚠️ ATTENTION - BACKUPS CREATED by SCRIPT
-> [!CAUTION]
-> copy.sh, release.sh and even upgrade.sh creates a backup!
-> Kindly investigate manually contents on your ~/.config
-> Delete manually all the backups which you dont need
 
 #### 🛎️ a small note on wallpapers
 - by default, only few wallpapers will be copied (1 each dark and light plus 3 more). You will be offered to download more wallpapers. You can preview/check the additional wallpapers from [`THIS`](https://github.com/JaKooLit/Wallpaper-Bank/tree/main/wallpapers) Link
@@ -126,9 +127,6 @@ chmod +x copy.sh
 - QUICK HINT! Click the HINT! Waybar module (note only available in Waybar default and Simple-L [TOP] layout). Can be launched by Keybind `SUPER H`
 - More question? click here browse through this [WIKI](https://github.com/JaKooLit/Hyprland-Dots/wiki/)
 - If you want the old configs, it is collected on my "Archive" repo. See [HERE](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)
-
-#### 🎞️ AGS Overview DEMO
-- in case you wonder, here is a short demo of AGS overview [Youtube LINK](https://www.youtube.com/watch?v=ir9NfMcZBzA)
 
 #### ⌨ Keybinds
 - Keybinds [`CLICK`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
