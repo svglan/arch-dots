@@ -15,7 +15,7 @@ if [ -z "$local_version" ]; then
 fi
 
 # GitHub URL - KooL's dots
-branch="main"
+branch="Debian-Dots"
 github_url="https://github.com/JaKooLit/Hyprland-Dots/tree/$branch/config/hypr/"
 
 # Fetch the version from GitHub URL - KooL's dots
