@@ -37,7 +37,7 @@ print_color() {
     printf "%b%s%b\n" "$1" "$2" "$RESET"
 }
 
-# Check /etc/os-release to see if this is an Ubuntu or Debian based distro
+# Check /etc/os-release to see if this is an Ubuntu based distro
 if grep -iq '^\(ID_LIKE\|ID\)=.*\(ubuntu\)' /etc/os-release >/dev/null 2>&1; then
 	printf "\n%.0s" {1..1}
     print_color $WARNING "
@@ -88,6 +88,8 @@ if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
   sed -i '/env = LIBVA_DRIVER_NAME,nvidia/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = __GLX_VENDOR_LIBRARY_NAME,nvidia/s/^#//' config/hypr/UserConfigs/ENVariables.conf
   sed -i '/env = NVD_BACKEND,direct/s/^#//' config/hypr/UserConfigs/ENVariables.conf
+  sed -i '/env = GSK_RENDERER,ngl/s/^#//' config/hypr/UserConfigs/ENVariables.conf
+
   # no hardware cursors if nvidia detected 
   sed -i 's/^\([[:space:]]*no_hardware_cursors[[:space:]]*=[[:space:]]*\)2/\1 1/' config/hypr/UserConfigs/UserSettings.conf 
   #sed -i 's/^\([[:space:]]*explicit_sync[[:space:]]*=[[:space:]]*\)2/\1 0/' config/hypr/UserConfigs/UserSettings.conf
@@ -407,7 +409,7 @@ while true; do
 
       # Applying to different SDDM themes
       apply_sddm_12h_format "/usr/share/sddm/themes/simple-sddm"
-      apply_sddm_12h_format "/usr/share/sddm/themes/simple-sddm-2"
+      apply_sddm_12h_format "/usr/share/sddm/themes/simple_sddm_2"
 
       # For SDDM (sequoia_2)
       sddm_directory_3="/usr/share/sddm/themes/sequoia_2"
