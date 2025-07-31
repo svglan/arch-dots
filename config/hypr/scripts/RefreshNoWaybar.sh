@@ -28,7 +28,7 @@ done
 # quit ags & relaunch ags
 #ags -q && ags &
 
-# quit quickshell & relaunch quickshell
+# quit ags & relaunch ags
 #pkill qs && qs &
 
 # Wallust refresh
