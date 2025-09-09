@@ -1,8 +1,8 @@
-[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/README.md)
-[![ro](https://img.shields.io/badge/lang-ro-green.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ro.md)
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ru.md)
-[![ua](https://img.shields.io/badge/lang-ua-white.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ua.md)
-[![de](https://img.shields.io/badge/lang-de-magenta.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.de.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/svglan/arch-dots/blob/main/README.md)
+[![ro](https://img.shields.io/badge/lang-ro-green.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ro.md)
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ru.md)
+[![ua](https://img.shields.io/badge/lang-ua-white.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ua.md)
+[![de](https://img.shields.io/badge/lang-de-magenta.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.de.md)
 
 <h3 align="center">
 <img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
@@ -16,9 +16,9 @@
 <br>
   <a href="#-コピー--インストール--アップデート手順-"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
   <a href="https://www.youtube.com/playlist?list=PLDtGd5Fw5_GjXCznR0BzCJJDIQSZJRbxx"><kbd> <br> Youtube <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/discussions"><kbd> <br> Discussions <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/discussions"><kbd> <br> Discussions <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/wiki/Keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
   <a href="https://discord.gg/kool-tech-world"><kbd> <br> Discord <br> </kbd></a>
 </div><br>
 
@@ -73,7 +73,7 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 
 - 選択したディストロ向けの自動化された Hyprland スクリプトです。これらの設定をインストールするオプションを選択した場合、対応する dotfiles を取得します。
 
-- [Arch-Linux](https://github.com/JaKooLit/Arch-Hyprland)
+- [Arch-Linux](https://github.com/svglan/arch)
 
 - [OpenSUSE(Tumbleweed)](https://github.com/JaKooLit/OpenSuse-Hyprland)
 
@@ -101,14 +101,14 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 
 ### 📦 変更点
 
-- 変更を簡単に追跡できるよう、[変更ログ](https://github.com/JaKooLit/Hyprland-Dots/wiki/Changelogs) 変更が注目に値する場合はスクリーンショットも含めます！
+- 変更を簡単に追跡できるよう、[変更ログ](https://github.com/svglan/arch-dots/wiki/Changelogs) 変更が注目に値する場合はスクリーンショットも含めます！
 
 > [注意!]
 > デフォルトでは、Kools Dots はスケーリングなしの 2K (1440p) ディスプレイ向けに調整・設定されています。
 
 ### 💥 コピー / インストール / アップデート手順 💥
 
-- [`ここに詳細を記載しています`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)
+- [`ここに詳細を記載しています`](https://github.com/svglan/arch-dots/wiki/Install_&_Update)
   > [注意!]
   > 自動コピーのスクリプトである "copy.sh" は、コピー対象のディレクトリをバックアップします。しかし、スクリプトがバックアップに失敗する可能性もあるため、手動でバックアップを取るのも良い考えです！
 - このリポジトリを git でクローンし、ディレクトリを移動して、実行可能にした後、スクリプトを実行してください。
@@ -116,14 +116,14 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 > Master ブランチからダウンロードする場合
 
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git
+git clone --depth=1 https://github.com/svglan/arch-dots.git
 cd Hyprland-Dots
 ```
 
 > 開発ブランチ（Development）からダウンロードする場合（開発およびテスト用）
 
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b development
+git clone --depth=1 https://github.com/svglan/arch-dots.git -b development
 cd Hyprland-Dots
 ```
 
@@ -153,7 +153,7 @@ chmod +x upgrade.sh
 
 ## ❗❗❗ DEBIAN および UBUNTU ユーザーへの注意！
 
-- KooL Hyprland の dotfiles 更新に関するメッセージが大量に届いています。 [`WIKI`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)に大きく注意書きを記載しました。
+- KooL Hyprland の dotfiles 更新に関するメッセージが大量に届いています。 [`WIKI`](https://github.com/svglan/arch-dots/wiki/Install_&_Update)に大きく注意書きを記載しました。
 
 #### ⚠️⚠️⚠️ スクリプトによって作成されたバックアップについての注意
 
@@ -172,24 +172,24 @@ chmod +x upgrade.sh
 
 - NVIDIA の所有者へ。`~/.config/hypr/UserConfigs/ENVariables.conf`を編集してください（強く推奨）。
 
-* NVIDIA の所有者とユーザーへ。 インsトール後に [`THIS`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Notes_to_remember#--for-nvidia-gpu-users)を確認してください。
+* NVIDIA の所有者とユーザーへ。 インsトール後に [`THIS`](https://github.com/svglan/arch-dots/wiki/Notes_to_remember#--for-nvidia-gpu-users)を確認してください。
 
 - 既に独自のキー設定やモニター設定を行っている場合は、ログアウトや再起動前に作成されたバックアップからコピーしてください。（推奨）
 
 #### 📖 既知の問題と可能な解決策
 
-- こちらのページを確認してください: [FAQ](https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ) & [UNSOLVED ISSUES](https://github.com/JaKooLit/Hyprland-Dots/wiki/Known_Issues)
+- こちらのページを確認してください: [FAQ](https://github.com/svglan/arch-dots/wiki/FAQ) & [UNSOLVED ISSUES](https://github.com/svglan/arch-dots/wiki/Known_Issues)
 
 #### 🙋 質問対応 ⁉️
 
 - FAQ! はい、これらの dotfiles は他のディストロでも使用できます！ただし、適切なパッケージを事前にインストールしてください！安心できるなら、私も Gentoo で同じ設定を使っています :)
 - クイックヒント！ Waybar モジュールの HINT! をクリックしてください。 (Waybar のデフォルトレイアウトおよび Simple-L [TOP] レイアウトでのみ利用可能)。キーバインドの `SUPER H`でも起動できます。
-- さらに質問がありますか？ こちらをクリックして [WIKI](https://github.com/JaKooLit/Hyprland-Dots/wiki/)を参照してください。
-- 旧設定が欲しい場合, すべて "Archive" リポジトリにまとめています。詳しくは[HERE](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)をご覧ください。
+- さらに質問がありますか？ こちらをクリックして [WIKI](https://github.com/svglan/arch-dots/wiki/)を参照してください。
+- 旧設定が欲しい場合, すべて "Archive" リポジトリにまとめています。詳しくは[HERE](https://github.com/svglan/arch-dots-releases-Archive)をご覧ください。
 
 #### ⌨ キーバインド
 
-- キーバインドの説明はこちら： [`CLICK`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
+- キーバインドの説明はこちら： [`CLICK`](https://github.com/svglan/arch-dots/wiki/Keybinds)
 
 #### 🙏 スペシャルリクエスト
 

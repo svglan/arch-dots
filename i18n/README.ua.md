@@ -1,8 +1,8 @@
-[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/README.md)
-[![jp](https://img.shields.io/badge/lang-jp-blue.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.jp.md)
-[![ro](https://img.shields.io/badge/lang-ro-green.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ro.md)
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ru.md)
-[![de](https://img.shields.io/badge/lang-de-magenta.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.de.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/svglan/arch-dots/blob/main/README.md)
+[![jp](https://img.shields.io/badge/lang-jp-blue.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.jp.md)
+[![ro](https://img.shields.io/badge/lang-ro-green.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ro.md)
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ru.md)
+[![de](https://img.shields.io/badge/lang-de-magenta.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.de.md)
 
 <h3 align="center">
 <img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
@@ -16,9 +16,9 @@
 <br>
   <a href="#-інструкції-з-копіювання--встановлення--оновлення-"><kbd> <br> Встановлення <br> </kbd></a>  
   <a href="https://www.youtube.com/playlist?list=PLDtGd5Fw5_GjXCznR0BzCJJDIQSZJRbxx"><kbd> <br> YouTube <br> </kbd></a>  
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki"><kbd> <br> Вікі <br> </kbd></a>  
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/discussions"><kbd> <br> Обговорення <br> </kbd></a>  
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds"><kbd> <br> Гарячі клавіші <br> </kbd></a>   
+  <a href="https://github.com/svglan/arch-dots/wiki"><kbd> <br> Вікі <br> </kbd></a>  
+  <a href="https://github.com/svglan/arch-dots/discussions"><kbd> <br> Обговорення <br> </kbd></a>  
+  <a href="https://github.com/svglan/arch-dots/wiki/Keybinds"><kbd> <br> Гарячі клавіші <br> </kbd></a>   
   <a href="https://discord.gg/kool-tech-world"><kbd> <br> Discord <br> </kbd></a>
 </div><br>
 
@@ -67,7 +67,7 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 ### 👁️‍🗨️ Мої скрипти встановлення Hyprland 👁️‍🗨️
 - Автоматичні скрипти Hyprland для обраного дистрибутива, які завантажать ці dotfiles, якщо ви оберете встановлення цих конфігурацій
 
-- [Arch-Linux](https://github.com/JaKooLit/Arch-Hyprland)
+- [Arch-Linux](https://github.com/svglan/arch)
 - [OpenSUSE(Tumbleweed)](https://github.com/JaKooLit/OpenSuse-Hyprland)
 - [Fedora-Linux](https://github.com/JaKooLit/Fedora-Hyprland)
 - [Debian-Linux (Trixie & SID)](https://github.com/JaKooLit/Debian-Hyprland)
@@ -87,13 +87,13 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 - Усі скріншоти зібрано тут [Скріншоти](https://github.com/JaKooLit/screenshots/tree/main/Hyprland-ScreenShots)
 
 ### 📦 Що нового?
-- Щоб легко відстежувати зміни, я оновлюватиму [Журнал змін](https://github.com/JaKooLit/Hyprland-Dots/wiki/Changelogs). Скріншоти будуть додані, якщо зміни варті згадки!
+- Щоб легко відстежувати зміни, я оновлюватиму [Журнал змін](https://github.com/svglan/arch-dots/wiki/Changelogs). Скріншоти будуть додані, якщо зміни варті згадки!
 
 > [!ПРИМІТКА]
 > Зверніть увагу, що за замовчуванням dotfiles від KooL налаштовані для дисплеїв 2k (1440p) без масштабування.
 
 ### 💥 Інструкції з копіювання / встановлення / оновлення 💥
-- [`БІЛЬШЕ ІНФОРМАЦІЇ ТУТ`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update) 
+- [`БІЛЬШЕ ІНФОРМАЦІЇ ТУТ`](https://github.com/svglan/arch-dots/wiki/Install_&_Update) 
 > [!Примітака] 
 > Автоматичний скрипт копіювання „copy.sh“ створює резервні копії директорій, які будуть скопійовані. Проте рекомендується зробити резервну копію вручну на випадок, якщо скрипт не зможе цього зробити!
 
@@ -101,13 +101,13 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 
 > для завантаження з гілки Master
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git
+git clone --depth=1 https://github.com/svglan/arch-dots.git
 cd Hyprland-Dots
 ```
 
 > для завантаження з гілки Development (розробка та тестування)
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b development
+git clone --depth=1 https://github.com/svglan/arch-dots.git -b development
 cd Hyprland-Dots
 ```
 
@@ -133,7 +133,7 @@ chmod +x upgrade.sh
 ```
 
 ## ❗❗❗ УВАГА ДЛЯ КОРИСТУВАЧІВ DEBIAN ТА UBUNTU!
-- Я отримую величезну кількість повідомлень щодо оновлення dotfiles Hyprland від KooL. Я зробив велику примітку у [`ВІКІ`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)
+- Я отримую величезну кількість повідомлень щодо оновлення dotfiles Hyprland від KooL. Я зробив велику примітку у [`ВІКІ`](https://github.com/svglan/arch-dots/wiki/Install_&_Update)
 
 #### ⚠️⚠️⚠️ УВАГА - РЕЗЕРВНІ КОПІЇ, СТВОРЕНІ СКРИПТОМ
 > [!УВАГА]
@@ -148,27 +148,27 @@ chmod +x upgrade.sh
 + Натисніть SUPER W і встановіть шпалери. Це також необхідно для ініціалізації wallust для тем waybar, kitty (tty) і rofi. Однак, якщо ви використовуєте copy.sh або release.sh, початкові шпалери вже будуть встановлені, і цього робити не доведеться
 
 + Власники Nvidia. Обов’язково відредагуйте `~/.config/hypr/UserConfigs/ENVariables.conf` (настійно рекомендується).
-- Користувачі / власники Nvidia, після встановлення перевірте [`ЦЕ`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Notes_to_remember#--for-nvidia-gpu-users)
+- Користувачі / власники Nvidia, після встановлення перевірте [`ЦЕ`](https://github.com/svglan/arch-dots/wiki/Notes_to_remember#--for-nvidia-gpu-users)
 
 + Якщо ви вже налаштували власні гарячі клавіші, монітори тощо, просто скопіюйте їх із створеної резервної копії перед виходом із системи або перезавантаженням. (рекомендується)
 
 #### 📖 Відомі проблеми та можливі рішення
-- перегляньте цю сторінку [Поширені запитання](https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ) та [НЕРОЗВ’ЯЗАНІ ПРОБЛЕМИ](https://github.com/JaKooLit/Hyprland-Dots/wiki/Known_Issues)
+- перегляньте цю сторінку [Поширені запитання](https://github.com/svglan/arch-dots/wiki/FAQ) та [НЕРОЗВ’ЯЗАНІ ПРОБЛЕМИ](https://github.com/svglan/arch-dots/wiki/Known_Issues)
 
 #### 🙋 ЗАПИТАННЯ ?!?! ⁉️
 - Поширені запитання! Так, ви можете використовувати ці dotfiles на інших дистрибутивах! Просто переконайтеся, що спочатку встановлено відповідні пакети! Якщо вам від цього легше, я використовую ту саму конфігурацію на моєму Gentoo :)
 - ШВИДКА ПОРАДА! Натисніть на модуль HINT! у Waybar (примітка: доступно лише у стандартному та Simple-L [ВЕРХНЬОМУ] макеті Waybar). Можна запустити за допомогою гарячої клавіші `SUPER H`
-- Ще запитання? натисніть тут, щоб переглянути цю [ВІКІ](https://github.com/JaKooLit/Hyprland-Dots/wiki/)
-- Якщо вам потрібні старі конфігурації, вони зібрані в моєму репозиторії „Archive“. Дивіться [ТУТ](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)
+- Ще запитання? натисніть тут, щоб переглянути цю [ВІКІ](https://github.com/svglan/arch-dots/wiki/)
+- Якщо вам потрібні старі конфігурації, вони зібрані в моєму репозиторії „Archive“. Дивіться [ТУТ](https://github.com/svglan/arch-dots-releases-Archive)
 
 #### ⌨ Гарячі клавіші
-- Гарячі клавіші [`КЛІКНІТЬ`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
+- Гарячі клавіші [`КЛІКНІТЬ`](https://github.com/svglan/arch-dots/wiki/Keybinds)
 
 #### 🙏 Особливе прохання
 - Якщо у вас є покращення для dotfiles або конфігурацій, не соромтеся надіслати PR для покращень. Я завжди вітаю покращення, адже я також вчуся, як і ви!
 
 #### ✍️ Внесок
-- Хочете зробити внесок? Клікніть [`ТУТ`](https://github.com/JaKooLit/Hyprland-Dots/blob/main/CONTRIBUTING.md) для посібника зі внесення внеску
+- Хочете зробити внесок? Клікніть [`ТУТ`](https://github.com/svglan/arch-dots/blob/main/CONTRIBUTING.md) для посібника зі внесення внеску
 
 #### 🤷‍♂️ ЩО РОБИТИ!
 - [ ] Налаштування dotfiles - 🚧 у постійному прогресі 

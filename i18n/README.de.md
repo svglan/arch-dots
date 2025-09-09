@@ -1,8 +1,8 @@
-[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/README.md)
-[![jp](https://img.shields.io/badge/lang-jp-blue.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.jp.md)
-[![ro](https://img.shields.io/badge/lang-ro-green.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ro.md)
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ru.md)
-[![ua](https://img.shields.io/badge/lang-ua-white.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ua.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/svglan/arch-dots/blob/main/README.md)
+[![jp](https://img.shields.io/badge/lang-jp-blue.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.jp.md)
+[![ro](https://img.shields.io/badge/lang-ro-green.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ro.md)
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ru.md)
+[![ua](https://img.shields.io/badge/lang-ua-white.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ua.md)
 
 <h3 align="center">
 <img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
@@ -16,9 +16,9 @@
 <br>
   <a href="#-kopieren--installation--update-anleitung-"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
   <a href="https://www.youtube.com/playlist?list=PLDtGd5Fw5_GjXCznR0BzCJJDIQSZJRbxx"><kbd> <br> Youtube <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/discussions"><kbd> <br> Discussions <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/discussions"><kbd> <br> Discussions <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/wiki/Keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
   <a href="https://discord.gg/kool-tech-world"><kbd> <br> Discord <br> </kbd></a>
 </div><br>
 
@@ -72,7 +72,7 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 ### 👁️‍🗨️ Meine Hyprland-Installationsskripte 👁️‍🗨️
 
 - Automatisierte Hyprland-Skripte für ein Distro deiner Wahl. Diese Skripte laden, wenn ben;tigt, meine vorkonfigurierten Dotfiles
-- [Arch-Linux](https://github.com/JaKooLit/Arch-Hyprland)
+- [Arch-Linux](https://github.com/svglan/arch)
 
 - [OpenSUSE(Tumbleweed)](https://github.com/JaKooLit/OpenSuse-Hyprland)
 
@@ -100,14 +100,14 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 
 ### 📦 Whats new?
 
-- Um Änderungen leicht nachzuvollziehen, werde ich die [CHANGELOGS](https://github.com/JaKooLit/Hyprland-Dots/wiki/Changelogs) regelmäßig aktualisieren. Es werden neue Screenshots hinzugefügt, wenn die Änderungen erwähnenswert sind!
+- Um Änderungen leicht nachzuvollziehen, werde ich die [CHANGELOGS](https://github.com/svglan/arch-dots/wiki/Changelogs) regelmäßig aktualisieren. Es werden neue Screenshots hinzugefügt, wenn die Änderungen erwähnenswert sind!
 
 > [!NOTE]
 > Bitte beachte, dass Kools Dots standardmäßig für einen 2K (1440p) Monitor ohne Skalierung angepasst und konfiguriert sind.
 
 ### 💥 Kopieren / Installation / Update-Anleitung 💥
 
-- [`Weiter Infos hier`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)
+- [`Weiter Infos hier`](https://github.com/svglan/arch-dots/wiki/Install_&_Update)
   > [!Note]
   > Das Kopierskript "copy.sh" erstellt Backups der zu kopierenden Konfigurationsverzeichnisse. Sollte das Skript fehlschlagen, empfiehlt es sich, manuell ein Backup zu erstellen.
 - Klone das Repository mit Git, wechsle in das Verzeichnis, mache die Datei ausführbar und führe das Skript aus:
@@ -115,14 +115,14 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 > Um den Master-Branch herunterzuladen
 
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git
+git clone --depth=1 https://github.com/svglan/arch-dots.git
 cd Hyprland-Dots
 ```
 
 > Um den Entwicklungs-Branch (Development & Testing) herunterzuladen:
 
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b development
+git clone --depth=1 https://github.com/svglan/arch-dots.git -b development
 cd Hyprland-Dots
 ```
 
@@ -152,7 +152,7 @@ chmod +x upgrade.sh
 
 ## ❗❗❗ DEBIAN AND UBUNTU INFORMATION!
 
-- Ich bekomme eine große Menge an Nachrichten über das Updaten eurer KooL Hyprland dotfiles. Es gibt dazu eine Info im [`WIKI`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)
+- Ich bekomme eine große Menge an Nachrichten über das Updaten eurer KooL Hyprland dotfiles. Es gibt dazu eine Info im [`WIKI`](https://github.com/svglan/arch-dots/wiki/Install_&_Update)
 
 #### ⚠️⚠️⚠️ ACHTUNG - SKRIPT-ERSTELLTE BACKUPS
 
@@ -171,24 +171,24 @@ chmod +x upgrade.sh
 
 - Für Nvidia Benutzer. Stelle sicher, dass du deine `~/.config/hypr/UserConfigs/ENVariables.conf` anpasst (unbedingt empfohlen).
 
-* Für NVIDIA Benutzer, schaue dir diese Informationen [`HIER`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Notes_to_remember#--for-nvidia-gpu-users) an.
+* Für NVIDIA Benutzer, schaue dir diese Informationen [`HIER`](https://github.com/svglan/arch-dots/wiki/Notes_to_remember#--for-nvidia-gpu-users) an.
 
 - Wenn die bereits deine Keybinds, Monitoren, usw. eingestellt hast... Kopiere die Einstellungen von dem Backup vor dem Logout / Reboot. (empfohlen)
 
 #### 📖 Bekannte Probleme und mögliche Lösungen
 
-- Schau dir diese Seite an [FAQ](https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ) und checke die [UNSOLVED ISSUES](https://github.com/JaKooLit/Hyprland-Dots/wiki/Known_Issues)
+- Schau dir diese Seite an [FAQ](https://github.com/svglan/arch-dots/wiki/FAQ) und checke die [UNSOLVED ISSUES](https://github.com/svglan/arch-dots/wiki/Known_Issues)
 
 #### 🙋 FRAGEN ?!?! ⁉️
 
 - FAQ! Die Dotfiles funktionieren auch auf anderen Distros! Stelle nur sicher, die richtigen Pakete vorher zu installieren! Falls du dich dann besser fühlst, ich benutze die selbe Konfiguration für mein Gentoo:)
 - KLEINER HINWEIS! Klicke auf das HINT! Waybar Modul (Notiz, nur in Waybar default und Simple-L [TOP] Layout verfügbar). Kann auch mit der Tastenkombination `SUPER H` gestartet werden
-- Weitere Fragen? Klicke hier um das [WIKI](https://github.com/JaKooLit/Hyprland-Dots/wiki/) zu durchstöbern.
-- Falls du eine ältere Version der Konfiguration haben möchtest, sind diese in meinem "Archive" Repository verfügbar. Siehe [HIER](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)
+- Weitere Fragen? Klicke hier um das [WIKI](https://github.com/svglan/arch-dots/wiki/) zu durchstöbern.
+- Falls du eine ältere Version der Konfiguration haben möchtest, sind diese in meinem "Archive" Repository verfügbar. Siehe [HIER](https://github.com/svglan/arch-dots-releases-Archive)
 
 #### ⌨ Keybinds
 
-- Keybinds [`KLICKE`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
+- Keybinds [`KLICKE`](https://github.com/svglan/arch-dots/wiki/Keybinds)
 
 #### 🙏 Hilfe gebraucht
 
@@ -196,7 +196,7 @@ chmod +x upgrade.sh
 
 #### ✍️ Contributing
 
-- Möchtest du contributen? Klicke [`HIER`](https://github.com/JaKooLit/Hyprland-Dots/blob/main/CONTRIBUTING.md) für eine Anleitung.
+- Möchtest du contributen? Klicke [`HIER`](https://github.com/svglan/arch-dots/blob/main/CONTRIBUTING.md) für eine Anleitung.
 
 #### 🤷‍♂️ TO DO!
 
