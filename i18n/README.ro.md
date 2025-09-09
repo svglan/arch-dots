@@ -1,8 +1,8 @@
-[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/README.md)
-[![jp](https://img.shields.io/badge/lang-jp-blue.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.jp.md)
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ru.md)
-[![ua](https://img.shields.io/badge/lang-ua-white.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.ua.md)
-[![de](https://img.shields.io/badge/lang-de-magenta.svg)](https://github.com/JaKooLit/Hyprland-Dots/blob/main/i18n/README.de.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/svglan/arch-dots/blob/main/README.md)
+[![jp](https://img.shields.io/badge/lang-jp-blue.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.jp.md)
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ru.md)
+[![ua](https://img.shields.io/badge/lang-ua-white.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.ua.md)
+[![de](https://img.shields.io/badge/lang-de-magenta.svg)](https://github.com/svglan/arch-dots/blob/main/i18n/README.de.md)
 
 <h3 align="center">
 <img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
@@ -17,9 +17,9 @@
 <br>
   <a href="#-instrucțiuni-de-copiere--instalare--actualizare-"><kbd> <br> Instalare <br> </kbd></a>&ensp;&ensp;
   <a href="https://www.youtube.com/playlist?list=PLDtGd5Fw5_GjXCznR0BzCJJDIQSZJRbxx"><kbd> <br> Youtube <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/discussions"><kbd> <br> Discuții <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds"><kbd> <br> Comenzi rapide <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/discussions"><kbd> <br> Discuții <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/svglan/arch-dots/wiki/Keybinds"><kbd> <br> Comenzi rapide <br> </kbd></a>&ensp;&ensp;
   <a href="https://discord.gg/kool-tech-world"><kbd> <br> Discord <br> </kbd></a>
 </div><br>
 
@@ -68,7 +68,7 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 ### 👁️‍🗨️ Scripturile mele de instalare Hyprland 👁️‍🗨️
 - Scripturi automate Hyprland pentru distribuția aleasă, care vor descărca aceste dotfiles dacă optezi pentru instalarea acestor configurații
 
-- [Arch-Linux](https://github.com/JaKooLit/Arch-Hyprland)
+- [Arch-Linux](https://github.com/svglan/arch)
 - [OpenSUSE(Tumbleweed)](https://github.com/JaKooLit/OpenSuse-Hyprland)
 - [Fedora-Linux](https://github.com/JaKooLit/Fedora-Hyprland)
 - [Debian-Linux (Trixie & SID)](https://github.com/JaKooLit/Debian-Hyprland)
@@ -88,13 +88,13 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 - Toate capturile de ecran sunt colectate aici [Capturi de ecran](https://github.com/JaKooLit/screenshots/tree/main/Hyprland-ScreenShots)
 
 ### 📦 Ce mai e nou?
-- Pentru a urmări ușor modificările, voi actualiza [Jurnalul de modificări](https://github.com/JaKooLit/Hyprland-Dots/wiki/Changelogs). Capturile de ecran vor fi incluse dacă modificările merită menționate!
+- Pentru a urmări ușor modificările, voi actualiza [Jurnalul de modificări](https://github.com/svglan/arch-dots/wiki/Changelogs). Capturile de ecran vor fi incluse dacă modificările merită menționate!
 
 > [!NOTĂ]
 > Reține că, în mod implicit, dotfiles-urile lui Kool sunt ajustate/configurate pentru afișaje 2k (1440p) fără scalare.
 
 ### 💥 Instrucțiuni de copiere / instalare / actualizare 💥
-- [`MAI MULTE INFORMAȚII AICI`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update) 
+- [`MAI MULTE INFORMAȚII AICI`](https://github.com/svglan/arch-dots/wiki/Install_&_Update) 
 > [!Notă] 
 > Scriptul automat de copiere „copy.sh” va crea copii de rezervă ale directoarelor care urmează să fie copiate. Totuși, este o idee bună să faci manual o copie de rezervă, în caz că scriptul nu reușește să o facă!
 
@@ -102,13 +102,13 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 
 > pentru a descărca din ramura Master
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git
+git clone --depth=1 https://github.com/svglan/arch-dots.git
 cd Hyprland-Dots
 ```
 
 > pentru a descărca din ramura Development (dezvoltare și testare)
 ```bash
-git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git -b development
+git clone --depth=1 https://github.com/svglan/arch-dots.git -b development
 cd Hyprland-Dots
 ```
 
@@ -134,7 +134,7 @@ chmod +x upgrade.sh
 ```
 
 ## ❗❗❗ ATENȚIE PENTRU UTILIZATORII DEBIAN ȘI UBUNTU!
-- Primesc o mulțime de mesaje despre actualizarea dotfiles-urilor Hyprland ale lui KooL. Am făcut o notă mare în [`WIKI`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Install_&_Update)
+- Primesc o mulțime de mesaje despre actualizarea dotfiles-urilor Hyprland ale lui KooL. Am făcut o notă mare în [`WIKI`](https://github.com/svglan/arch-dots/wiki/Install_&_Update)
 
 #### ⚠️⚠️⚠️ ATENȚIE - COPII DE REZERVĂ CREATE DE SCRIPT
 > [!ATENȚIE]
@@ -149,27 +149,27 @@ chmod +x upgrade.sh
 + Apasă SUPER W și setează o imagine de fundal. Aceasta este și pentru a inițializa wallust pentru temele waybar, kitty (tty) și rofi. Totuși, dacă folosești copy.sh sau release.sh, va exista o imagine de fundal inițială presetată și nu va trebui să faci asta
 
 + Proprietari de Nvidia. Asigură-te că editezi `~/.config/hypr/UserConfigs/ENVariables.conf` (foarte recomandat).
-- Utilizatori / proprietari de Nvidia, după instalare, verifică [`ACESTA`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Notes_to_remember#--for-nvidia-gpu-users)
+- Utilizatori / proprietari de Nvidia, după instalare, verifică [`ACESTA`](https://github.com/svglan/arch-dots/wiki/Notes_to_remember#--for-nvidia-gpu-users)
 
 + Dacă ți-ai setat deja propriile comenzi rapide, monitoare etc., doar copiază-le din copia de rezervă creată înainte de a te deconecta sau reporni. (recomandat)
 
 #### 📖 Probleme cunoscute și posibile soluții
-- verifică această pagină [Întrebări frecvente](https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ) și [PROBLEME NESOLUȚIONATE](https://github.com/JaKooLit/Hyprland-Dots/wiki/Known_Issues)
+- verifică această pagină [Întrebări frecvente](https://github.com/svglan/arch-dots/wiki/FAQ) și [PROBLEME NESOLUȚIONATE](https://github.com/svglan/arch-dots/wiki/Known_Issues)
 
 #### 🙋 ÎNTREBĂRI ?!?! ⁉️
 - Întrebări frecvente! Da, poți folosi aceste dotfiles pe alte distribuții! Asigură-te doar că instalezi pachetele corespunzătoare mai întâi! Dacă te face să te simți mai bine, folosesc aceeași configurație pe Gentoo-ul meu :)
 - SFAT RAPID! Apasă pe modulul HINT! din Waybar (notă: disponibil doar în layout-urile Waybar implicit și Simple-L [SUS]). Poate fi lansat cu comanda rapidă `SUPER H`
-- Mai multe întrebări? click aici pentru a răsfoi acest [WIKI](https://github.com/JaKooLit/Hyprland-Dots/wiki/)
-- Dacă vrei vechile configurații, acestea sunt colectate în repo-ul meu „Archive”. Vezi [AICI](https://github.com/JaKooLit/Hyprland-Dots-releases-Archive)
+- Mai multe întrebări? click aici pentru a răsfoi acest [WIKI](https://github.com/svglan/arch-dots/wiki/)
+- Dacă vrei vechile configurații, acestea sunt colectate în repo-ul meu „Archive”. Vezi [AICI](https://github.com/svglan/arch-dots-releases-Archive)
 
 #### ⌨ Comenzi rapide
-- Comenzi rapide [`CLICK`](https://github.com/JaKooLit/Hyprland-Dots/wiki/Keybinds)
+- Comenzi rapide [`CLICK`](https://github.com/svglan/arch-dots/wiki/Keybinds)
 
 #### 🙏 Cerere specială
 - Dacă ai îmbunătățiri pentru dotfiles sau configurații, nu ezita să trimiți un PR pentru îmbunătățiri. Întotdeauna primesc cu bucurie îmbunătățiri, deoarece și eu învăț, la fel ca voi!
 
 #### ✍️ Contribuții
-- Vrei să contribui? Click [`AICI`](https://github.com/JaKooLit/Hyprland-Dots/blob/main/CONTRIBUTING.md) pentru un ghid despre cum să contribui
+- Vrei să contribui? Click [`AICI`](https://github.com/svglan/arch-dots/blob/main/CONTRIBUTING.md) pentru un ghid despre cum să contribui
 
 #### 🤷‍♂️ DE FĂCUT!
 - [ ] Ajustarea dotfiles-urilor - 🚧 în progres constant 
