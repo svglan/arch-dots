@@ -8,32 +8,17 @@
 <img align="center" width="80%" src=https://github.com/user-attachments/assets/bc18bd4d-944b-4d5f-a119-7578fa38f9b4 />
 </h3>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/assets/latte.png" width="400" />
-</p>
 
 <div align="center">
 <br>
   <a href="#-copying--installation--update-instructions-"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
-  <a href="https://www.youtube.com/playlist?list=PLDtGd5Fw5_GjXCznR0BzCJJDIQSZJRbxx"><kbd> <br> Youtube <br> </kbd></a>&ensp;&ensp;
   <a href="https://github.com/svglan/arch-dots/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
   <a href="https://github.com/svglan/arch-dots/discussions"><kbd> <br> Discussions <br> </kbd></a>&ensp;&ensp;
   <a href="https://github.com/svglan/arch-dots/wiki/Keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
-  <a href="https://discord.gg/kool-tech-world"><kbd> <br> Discord <br> </kbd></a>
 </div><br>
 
 <div align="center">
 
-![GitHub Repo stars](https://img.shields.io/github/stars/JaKooLit/Hyprland-Dots?style=for-the-badge&color=cba6f7) ![GitHub last commit](https://img.shields.io/github/last-commit/JaKooLit/Hyprland-Dots?style=for-the-badge&color=b4befe) ![GitHub repo size](https://img.shields.io/github/repo-size/JaKooLit/Hyprland-Dots?style=for-the-badge&color=cba6f7) <a href="https://discord.gg/kool-tech-world"> <img src="https://img.shields.io/discord/1151869464405606400?style=for-the-badge&logo=discord&color=cba6f7&link=https%3A%2F%2Fdiscord.gg%kool-tech-world"> </a>
-
-<br/>
-</div>
-
-<h3 align="center">
-  <img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
-  KooL's Hyprland Dotfiles Showcase 
-  <img src="https://github.com/JaKooLit/Telegram-Animated-Emojis/blob/main/Activity/Sparkles.webp" alt="Sparkles" width="38" height="38" />
-</h3>
 
 <div align="center">
 
@@ -41,10 +26,6 @@ https://github.com/user-attachments/assets/49bc12b2-abaf-45de-a21c-67aacd9bb872
 
 </div>
 
-### 📹 A video walkthroughs
-- at the bottom
-
-</details>
 
 ---
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&pause=1000&color=F7077E&vCenter=true&width=435&height=30&lines=INSTALLATION)](https://git.io/typing-svg)
@@ -67,17 +48,6 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 
 - [Arch-Linux](https://github.com/svglan/arch)
 
-- [OpenSUSE(Tumbleweed)](https://github.com/JaKooLit/OpenSuse-Hyprland)
-
-- [Fedora-Linux](https://github.com/JaKooLit/Fedora-Hyprland)
-
-- [Debian-Linux (Trixie & SID)](https://github.com/JaKooLit/Debian-Hyprland)
-
-- [NixOS](https://github.com/JaKooLit/NixOS-Hyprland)
-
-- [Ubuntu 24.04 LTS](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.04)
-- [Ubuntu 24.10](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/24.10)
-- [Ubuntu 25.04 - (ALPHA STAGE)](https://github.com/JaKooLit/Ubuntu-Hyprland/tree/25.04)
 ---
 
 ### 🪧 Attention 🪧
@@ -85,8 +55,6 @@ sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/Distr
 - refer to install scripts what packages needed to install... but atleast, Hyprland packages is needed 😏😏😏 duh!!
 - This repo will be pulled by the Distro-Hyprland install scripts above if you opt to download pre-configured dots
 
-### 👀 Screenshots 👀
-- All screenshots are collected here [Screenshots](https://github.com/JaKooLit/screenshots/tree/main/Hyprland-ScreenShots)
 
 ### 📦 Whats new?
 - To easily track changes, I will be updating the [CHANGELOGS](https://github.com/svglan/arch-dots/wiki/Changelogs)  Screenshots will be included if worth mentioning the changes!
@@ -180,27 +148,7 @@ chmod +x upgrade.sh
 #### 🤷‍♂️ TO DO!
 - [ ] Tweak dots - 🚧 in constant progress 
 
-#### 🔮 Discord Server
-- kindly join my [Discord](https://discord.com/invite/kool-tech-world)
 
-
-#### 💖 Support
-- a Star on my Github repos would be nice 🌟
-
-- Subscribe to my Youtube Channel [YouTube](https://www.youtube.com/@Ja.KooLit) 
-
-- you can also give support through coffee's or btc 😊
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/jakoolit)
-
-or
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/JaKooLit)
-
-Or you can donate cryto on my btc wallet :)  
-> 1N3MeV2dsX6gQB42HXU6MF2hAix1mqjo8i
-
-![Bitcoin](https://github.com/user-attachments/assets/7ed32f8f-c499-46f0-a53c-3f6fbd343699)
 
 
                         
